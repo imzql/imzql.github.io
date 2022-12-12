@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>我的c语言学习笔记-</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="https://usj.cc/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="c语言,">
+<meta name="description" content="">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+ 
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="小赵同学" type="application/atom+xml">
+</head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="https://usj.cc/favicon.ico" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>小赵同学</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-img"
+    style="background: url('https://usj.cc/usr/uploads/2021/08/2692875636.jpg')" 
+>
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+            
+            <li><a href="/tags/c语言">c语言</a></li>
+            
+            
+        </ul>
+        
+        <h1>我的c语言学习笔记</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    <svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+                        <path
+                            d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+                            p-id="2902" fill="#ffffff"></path>
+                    </svg>
+                    
+                <span class="post-header-info-author-text"> <a href="../../about">小赵同学</a></span>
+                <div class="post-header-info-author-categories">
+                    
+                         <a href="../../categories/笔记/" target="_blank" >笔记</a>
+                    
+                </div>
+                <p>2022-01-22 18:39:10</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+  <div id="article" class="post-content-info">
+    
+
+    <h1 id="入门阶段-认识C语言"><a href="#入门阶段-认识C语言" class="headerlink" title="入门阶段 认识C语言"></a>入门阶段 认识C语言</h1><h2 id="1-进制的转换"><a href="#1-进制的转换" class="headerlink" title="1.进制的转换"></a>1.进制的转换</h2><p>十进制：有 0 - 9 共十个数字，逢十进一</p>
+<p>二进制：有 0 - 1 共两个数字，逢二进一</p>
+<p>八进制：有 0 - 7 共八个数字，逢八进一</p>
+<p>十六进制：有 0 - 9 ，A(10),B(11),C(12),D(13),E(14),F(15),共十六个数字，逢十六进一</p>
+<h2 id="2-进制的脚标"><a href="#2-进制的脚标" class="headerlink" title="2.进制的脚标"></a>2.进制的脚标</h2><p>二进制：B    八进制：Q    十进制：D   十六进制：H</p>
+<p>数字标法</p>
+<p>(101)<sub>2</sub>         </p>
+<p>(72)<sub>8</sub></p>
+<p>(398)<sub>10</sub>  </p>
+<p>(123)<sub>16</sub></p>
+<h2 id="3-按权展开式"><a href="#3-按权展开式" class="headerlink" title="3.按权展开式"></a>3.按权展开式</h2><p>非十进制转为十进制</p>
+<p>方法：</p>
+<p>1.确定权</p>
+<p>2.标指数</p>
+<p>十进制转换为非十进制</p>
+<p>方法:</p>
+<p>取余倒排序</p>
+<p>其中需要记忆的是取余法则</p>
+<p>1&#x2F;2&#x3D;0…..1(小&#x2F;大&#x3D;0…..小）</p>
+<p>例如：7&#x2F;8&#x3D;0…..7</p>
+<h2 id="4-字符在计算机内部的表示"><a href="#4-字符在计算机内部的表示" class="headerlink" title="4.字符在计算机内部的表示"></a>4.字符在计算机内部的表示</h2><p><strong>此部分比较重要，需要考选择题和填空题</strong></p>
+<p>ASCII码：美国信息交换标准码，采用七位二进制进行编码</p>
+<p>0000000B-1111111B</p>
+<p>0-127 共128个编码</p>
+<p>A-Z：65-90</p>
+<p>a-z：97-122</p>
+<p>0-9:48-57</p>
+<p>空格(space）：32</p>
+<h1 id="第一章-程序设计的基本概念"><a href="#第一章-程序设计的基本概念" class="headerlink" title="第一章 程序设计的基本概念"></a>第一章 程序设计的基本概念</h1><h2 id="1-1-程序"><a href="#1-1-程序" class="headerlink" title="1.1 程序"></a>1.1 程序</h2><p>由高级语言编写的程序成为源程序</p>
+<p>由c语言编写的程序扩展为“.c”</p>
+<p>编译后生成“.obj”，链接后生成“.exe”</p>
+<p>c语言源程序的执行过程为编译和链接</p>
+<p>例如：源程序（A.c）通过编译变成目标程序（A.obj）通过链接变成可执行文件（A.exe）</p>
+<h2 id="1-2-结构化程序设计"><a href="#1-2-结构化程序设计" class="headerlink" title="1.2 结构化程序设计"></a>1.2 结构化程序设计</h2><p>主要需要了解三个结构</p>
+<p>1.顺序结构  2.选择结构  3.循环结构</p>
+<p>说明:c语言属于结构化程序设计</p>
+<h1 id="第二章-c程序设计的初步知识"><a href="#第二章-c程序设计的初步知识" class="headerlink" title="第二章 c程序设计的初步知识"></a>第二章 c程序设计的初步知识</h1><p>函数头部</p>
+<pre><code>main() 
+      int  a,b,s;
+      a=123;b=456;
+      s=a+b;
+ printf(&quot;&lt;s=%d\n&gt;&quot;,s);  这是输出函数
+</code></pre>
+<p>说明：printf(“&lt;格式化字符串&gt;”,”&lt;参量表&gt;”)</p>
+<p>原则是正常字符，原样输出</p>
+<p>格式化规定字符：以%开始，用来确定输出的内容格式</p>
+<p><strong>C程序的特点</strong></p>
+<p><strong>1.一个c程序由函数组成，函数是组成c程序的基本单位，语句是组成c程序的最小单位</strong></p>
+<p><strong>2.一个c程序总是由主函数开始执行</strong></p>
+<p><strong>3.一行可写一条或多条语句，一条语句也可以写成一行或多行</strong></p>
+<p><strong>4.每条语句最后加分号结束</strong></p>
+<h2 id="2-1-标识符、常量、变量"><a href="#2-1-标识符、常量、变量" class="headerlink" title="2.1 标识符、常量、变量"></a>2.1 标识符、常量、变量</h2><h4 id="1-标识符"><a href="#1-标识符" class="headerlink" title="1.标识符"></a>1.标识符</h4><p>由数字、字母、下划线组成</p>
+<p>开头必须是字母或下划线</p>
+<p>注意：</p>
+<p>1.关键字不能用于用户标志符</p>
+<p>2.C语言中是区分大小写的</p>
+<p>说明：</p>
+<p>1.c语言的关键字不能用于标识</p>
+<p>2.c语言的关键字均为小写字母</p>
+<p>3.标识符是区分大小写</p>
+<h4 id="2-常量"><a href="#2-常量" class="headerlink" title="2.常量"></a>2.常量</h4><p>在程序运行过程中其值不可改变的量</p>
+<p>整型：123，-456</p>
+<p>实型：0.123，-4.56 （其中实型单指小数）</p>
+<p>字符型：’A’ , ‘f’ （字符型的字母必须由单引号引起来）</p>
+<h4 id="3-变量"><a href="#3-变量" class="headerlink" title="3.变量"></a>3.变量</h4><p>在程序运行中其值可以变的量</p>
+<p>整型 int  a，b，s；    其中变量名由标识符组成</p>
+<p>实型 float  x，y；</p>
+<p>int  sum  ； 则变量sum值为随机值</p>
+<p>未赋值的变量默认为随机值</p>
+<p><strong>在c语言中，最简单的数据类型包括整型，实型，字符型。</strong></p>
+<h2 id="2-3-整型数据"><a href="#2-3-整型数据" class="headerlink" title="2.3 整型数据"></a><strong>2.3 整型数据</strong></h2><h4 id="1-整型常量"><a href="#1-整型常量" class="headerlink" title="1.整型常量"></a>1.整型常量</h4><p>（C语言的整型常量无二进制）</p>
+<p>十进制：123，-456</p>
+<p>八进制：024,072（前导0）</p>
+<p>十六进制：0x123,0xabc（前导0x或者0X）注意：可以大小写x</p>
+<h5 id="知识点速记"><a href="#知识点速记" class="headerlink" title="知识点速记"></a>知识点速记</h5><p><strong>1.其中，为原型，需要保留输出，否则不得分，回车可以写也可以不写</strong></p>
+<p><strong>2.其中，%0以八进制数形式输出整数，%x以十六进制数形式输出</strong></p>
+<p><strong>3.以八进制，十六进制输出一定是没有前导的</strong></p>
+<h4 id="2-整型变量"><a href="#2-整型变量" class="headerlink" title="2.整型变量"></a>2.整型变量</h4><p>int 基本型（TC系统占2个字节，VC系统占4个字节）</p>
+<p>short  短整型   占2个字节</p>
+<p>long   长整型   占4个字节</p>
+<p>unsigned  无符号型  只用了解即可</p>
+<h2 id="2-4-实型数据"><a href="#2-4-实型数据" class="headerlink" title="2.4 实型数据"></a><strong>2.4 实型数据</strong></h2><h4 id="1-实型常量"><a href="#1-实型常量" class="headerlink" title="1.实型常量"></a>1.实型常量</h4><h5 id="1-小数点式"><a href="#1-小数点式" class="headerlink" title="1.小数点式"></a>1.小数点式</h5><p>由数字，正负号，小数点组成</p>
+<p>组成规则：</p>
+<p>1.必须要有小数点</p>
+<p>2.至少一边要有数字（小数点一边没有数字的）</p>
+<hr>
+<h5 id="2-指数形式（由E或e组成）"><a href="#2-指数形式（由E或e组成）" class="headerlink" title="2.指数形式（由E或e组成）"></a>2.指数形式（由E或e组成）</h5><p>举例子</p>
+<p>组成规则：</p>
+<p>1.两边都要有数字（确切的说e的两边）</p>
+<p>2.指数部分必须是整数</p>
+<hr>
+<h4 id="2-实型变量"><a href="#2-实型变量" class="headerlink" title="2.实型变量"></a>2.实型变量</h4><p>单精度：float   4个字节</p>
+<p>双精度：double  8个字节</p>
+<p><strong>补充知识点：看到%f，结果输出必须要保留6位小数</strong></p>
+<p>习题：</p>
+<p>设char w；int x；float y；double z；</p>
+<p>则表达式w*x+z-y的值的类型是（double）</p>
+<p>解析：char w属于字符型；1字节</p>
+<p>intx  属于整型，2字节</p>
+<p>float y属于实型变量单精度，4字节</p>
+<p>double z属于实型变量双精度，8字节</p>
+<p>注意四种不同类型的变量，进行运算，最后的结果应该以最长字节为准。故填最长字节double</p>
+<p>这里的做题技巧就是只要在填空题看到“表达式”“类型”直接写最长字节</p>
+<h2 id="2-5-字符型数据"><a href="#2-5-字符型数据" class="headerlink" title="2.5 字符型数据"></a><strong>2.5 字符型数据</strong></h2><h4 id="1-字符常量"><a href="#1-字符常量" class="headerlink" title="1.字符常量"></a>1.字符常量</h4><p>常规的字符常量，单引号，且只有一个字符</p>
+<p>2.转义字符常量</p>
+<p>2.1 ‘\n’ 回车换行enter</p>
+<p>2.2 ‘\t’ 横向跳格tab键</p>
+<p>2.3 ‘\b’ 退格 backspace</p>
+<p>2.4 ‘\‘ 反杠</p>
+<p>2.5 ‘&#39;‘ 单引号</p>
+<p>2.6 ‘&quot;‘ 双引号</p>
+<p>2.7 ‘\ddd’ 1至3位八进制整数表示的1个字符</p>
+<p><strong>举例子：\101;\72;\2</strong></p>
+<p>2.8 ‘\xhh’ 1至2位十六进制整数表示的1个字符</p>
+<h5 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a><strong>补充知识点</strong></h5><p>%c   需要输出字符原形</p>
+<p>%d   需要输出字符数值</p>
+<p>%0  八进制</p>
+<p>%x  十六进制</p>
+<p>%f  输出的数值需要保留六位小数</p>
+<h4 id="2-字符串常量"><a href="#2-字符串常量" class="headerlink" title="2.字符串常量"></a>2.字符串常量</h4><p>双引号-字符序列</p>
+<p>其中字符 ‘A’ 占一个字节，字符串 “A” 占两个字节</p>
+<p>注意：字符 ‘A’ 总是以 |0 结束，默认要占据一个字节</p>
+<h4 id="3-字符变量"><a href="#3-字符变量" class="headerlink" title="3.字符变量"></a>3.字符变量</h4><p>char  为字符型</p>
+<p>其中%c指的是字符原形，%d指的是字符数值</p>
+<h5 id="字符之间的转换"><a href="#字符之间的转换" class="headerlink" title="字符之间的转换"></a>字符之间的转换</h5><p>1.大写字母+32&#x3D;小写字母</p>
+<p>2.小写字母-32&#x3D;大写字母</p>
+<p>3.数字 + ‘0’ &#x3D; 数字字符</p>
+<p>4.数字字符 - ‘0’ &#x3D; 数字</p>
+<p>例如 ‘9’ - ‘0’ &#x3D; 9</p>
+<h2 id="2-6-算术表达式"><a href="#2-6-算术表达式" class="headerlink" title="2.6 算术表达式"></a>2.6 算术表达式</h2><h4 id="1-基本的算术运算符"><a href="#1-基本的算术运算符" class="headerlink" title="1.基本的算术运算符"></a>1.基本的算术运算符</h4><p>+、-、*、&#x2F;、%（求余）</p>
+<h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><h5 id="对于-求值要点"><a href="#对于-求值要点" class="headerlink" title="对于\求值要点"></a>对于\求值要点</h5><p>1.若a与b均为整型，结果为整型</p>
+<p>2.若a与b其中任意一个为实型，结果为实型</p>
+<h5 id="对于-求值要点-1"><a href="#对于-求值要点-1" class="headerlink" title="对于%求值要点"></a>对于%求值要点</h5><p>1.求余运算符的对象必须是整型</p>
+<p><strong>2.出现负数，余数的符号与被除数一致</strong></p>
+<h4 id="2-运算符的优先级与结合性"><a href="#2-运算符的优先级与结合性" class="headerlink" title="2.运算符的优先级与结合性"></a>2.运算符的优先级与结合性</h4><p>1.优先级：次序</p>
+
+  </div>
+  <div id="gitalk-container"></div>
+</div>
+
+<script>
+  
+Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+  dragToClose: true,
+  Toolbar: true,
+  closeButton: "top",
+  Image: {
+    zoom: true,
+  },
+  on: {
+    initCarousel: (fancybox) => {
+      const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+    "Carousel.change": (fancybox, carousel, to, from) => {
+      const slide = carousel.slides[to];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+  },
+});
+</script>
+
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 9999;
+        /* width: 600px !important; */
+        min-width: 0%;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            max-width: 88%
+        }
+    }
+</style>
+
+    <div class="post-paging">
+    
+    <a href="/p/1dbfa096.html">
+        <div class="post-paging-last">
+            <span>上一篇</span>
+            <p>hexo的备份以及数据恢复</p>
+        </div>
+    </a>
+    
+
+    
+</div>
+</div>
+		<div class="footer">
+	<div class="Copyright">
+
+	</div>
+	<div class="contact">
+		
+
+			
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+	
+		
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"02b3c","clientSecret":"adfc7b4","repo":"gimment","owner":"duneng","admin":"duneng"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+	</body>
+</html>
+
