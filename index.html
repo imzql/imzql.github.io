@@ -1,727 +1,579 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="https://cravatar.cn/avatar/08f9cdacb83a984411a94b60fddfbdcd?s=&amp;d=mm&amp;r=g">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
-  <meta name="theme-color" content="rgba(0, 0, 0,0.8)">
-  <meta name="author" content="">
-  <meta name="keywords" content="">
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
     <meta name="description" content="Hello , friend ! Please call me xiao Zhao classmate , this is xiao zhao classmate&#39;s blog , welcome to visit my website , here is also my personal notebook.">
-<meta property="og:type" content="website">
-<meta property="og:title">
-<meta property="og:url" content="https://moe.vin/index.html">
-<meta property="og:site_name">
-<meta property="og:description" content="Hello , friend ! Please call me xiao Zhao classmate , this is xiao zhao classmate&#39;s blog , welcome to visit my website , here is also my personal notebook.">
-<meta property="og:locale" content="zh_CN">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  <title></title>
+    <meta name="author" content="小赵同学">
+    
+    <title>
+        
+        萌笔记
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="https://img.usj.cc/i/2022/06/16/62ab1efc9f717.png">
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
 
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
 
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
 
-<!-- 主题依赖的图标库，不要自行修改 -->
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-  
-<link rel="stylesheet" href="/css/zql.css">
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"moe.vin","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"moe.vin","root":"/","language":"zh-CN","path":"search.xml"}
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"https://img.usj.cc/i/2022/06/16/62ab1efc9f717.png","favicon":"https://img.usj.cc/i/2022/06/16/62ab1efc9f717.png","avatar":"https://img.usj.cc/i/2022/06/16/62ab1efc9f717.png","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"header_transparent":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="null" type="application/atom+xml">
 </head>
 
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>moe</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                友链
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('https://s4.ax1x.com/2022/01/22/7hCuhn.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="风吹云散，云卷云舒">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
+<div class="progress-bar-container">
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content is-home">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://img.usj.cc/i/2022/06/16/62ab1efc9f717.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+               萌笔记
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class="active"
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="active"
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+                    <i class="fas fa-thumbtack top-icon"></i>
                 
 
+                <h3 class="home-article-title">
+                    <a href="/p/13aa859c.html">
+                        我的python笔记
+                    </a>
+                </h3>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-          <i class="index-pin iconfont icon-top" title="Pin on top"></i>
-        
-        <a href="/p/13aa859c.html" target="_self">
-          我的python笔记
-        </a>
-      </h1>
+                <div class="home-article-content keep-markdown-body">
+                    
+                        python笔记总结逻辑运算符and or not
+相对比c语言，语法有一些不同，&amp;&amp;(且)，||(或)，!(非)；
+逻辑运算符语法
+and 一假则假，指的是两个需要bool值为true才返回true
+or  一真则真，指的是任意一个...
+                    
+                </div>
 
-      <p class="index-excerpt">
-        <a href="/p/13aa859c.html" target="_self">
-          
-          python笔记总结逻辑运算符and or not 相对比c语言，语法有一些不同，&amp;&amp;(且)，||(或)，!(非)； 逻辑运算符语法 and 一假则假，指的是两个需要bool值为true才返回true or  一真则真，指的是任意一个条件，bool值为true，就返回true not 遇真则假，遇假则真，遇到true返回false，遇到false返回true
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-03-05 10:49" pubdate>
-              2022-03-05
-            </time>
-          </div>
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Mon Dec 12 2022 19:40:39 GMT+0800">
+                2022-12-12
+            </span>
+        </span>
         
         
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/python%E7%AC%94%E8%AE%B0/">python笔记</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/python%E7%AC%94%E8%AE%B0/">python笔记</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/p/c61767a5.html" target="_self">
-          新机装npm报错解决方法
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/p/c61767a5.html" target="_self">
-          
-          解决方法以管理员身份打开windos Powershell 并键入以下命令 12345Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Forcenpm install --global --production npm-windows-upgradenpm-windows-upgrade --npm-version latest  使用淘宝
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-07-19 08:57" pubdate>
-              2022-07-19
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/p/f5bf8885.html" target="_self">
-          记录一下Linux常用的screen工具命令
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/p/f5bf8885.html" target="_self">
-          
-          我们用 VPS 执行一个系统安装，就输入命令然后在那一直等。如果出现掉线或者断网死机的情况，我们还得重新安装。如果能使用上 screen 命令可以实现无人值守的效果。我们可以同时操作多个任务，也可以关机操作。所以说很方便。 安装与使用1、安装方法：yum install screen  #CentOS apt-get install screen  #Debian或者Ubuntu  2、创建一个
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-03-10 17:08" pubdate>
-              2022-03-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/screen%E6%8C%87%E4%BB%A4/">screen指令</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/screen/">screen</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/p/3d4fc856.html" target="_self">
-          记录一下部署hellohao图床的坑
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/p/3d4fc856.html" target="_self">
-          
-          前言考虑到图片存储问题，还是不建议图片存在一些市面上免费的图床 所以打算搭建一款自己的图床，用于图片的存储，在朋友的了解到，才知道hellohao这个程序很不错 于是自己入手了hellohao的core版本，也就是付费版本 因为这个程序属于java开发的web程序，前后端分离，主要是后端提供图片存储服务 也就是可以把前端，后端，分别部署在两个服务器，这样可以有效的防止前端页面被不法分子攻击 导致自
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-03-08 15:47" pubdate>
-              2022-03-08
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E9%83%A8%E7%BD%B2hellohao%E5%9B%BE%E5%BA%8A/">部署hellohao图床</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/hellohao%E5%9B%BE%E5%BA%8A/">hellohao图床</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/p/3dfe0e1e.html" target="_self">
-          hexo推送报错解决方法
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/p/3dfe0e1e.html" target="_self">
-          
-          好久不更新hexo博客，今天发现一个问题，发现 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  将新的hexo文章部署到github pages会提示错误 fatal: unable to access &#39;https:&#x2F;&#x2F;github.com&#x2F;a956551943&#x2F;a956551943.github.io&#x2F;&#39;: Encountered
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-03-05 11:22" pubdate>
-              2022-03-05
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/p/acd7a6a9.html" target="_self">
-          记录一下Linux安装x-ui和bbr加速
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/p/acd7a6a9.html" target="_self">
-          
-          由于centos系统过于老旧，又不知道之前下载了什么插件 索性给自己的机器进行了一次系统重装，升级为centos7.0 写这篇笔记记录一下纯净的centos系统安装bbr和x-ui面板 安装centos依赖更新系统yum -y update  由于我们主要是安装x-ui不需要安装什么插件啥的 安装x-ui面板安装一键脚本bash &lt;(curl -Ls https:&#x2F;&#x2F;raw.githubus
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-02-04 18:27" pubdate>
-              2022-02-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/x-ui%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85/">x-ui面板安装</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/x-ui/">x-ui</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/p/27ad136a.html" target="_self">
-          记录一些常用的docker命令与项目
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/p/27ad136a.html" target="_self">
-          
-          最近喜欢上了docker部署，但是有些命令去文档看 官网老慢了，一些常用的指令记录下来，用来备忘 常用指令一键查看正在运行容器docker ps  设置容器执行服务器开启自启sudo docker update 容器的id --restart&#x3D;always  优秀的docker项目rsshub首先拉取镜像docker pull diygod&#x2F;rsshub  部署应用，这里部署在公网ip的1200端
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-01-26 22:20" pubdate>
-              2022-01-26
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/docker/">docker</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/docker/">docker</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/p/49292a36.html" target="_self">
-          hexo解决图片本地化的问题
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/p/49292a36.html" target="_self">
-          
-          仔细看了很多hexo的博客，基本上都是纯文字的博客 长篇大论的文字，会产生一定的视觉疲劳 写文章要图文并茂，这样自己看也舒服，读者也舒服 typroa是一个可以沉浸式写作的好用的软件，软件本身也自带了很多功能 市面上也有很多速度很快的图床，但是数据放在别人那里，总还是感觉不太靠谱 我在想，有没有一种方法，可以使自己的hexo文章的图片本地化呢 下午找了很久，问了很多大佬，简单记录一下实现的思路 实
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-01-23 23:18" pubdate>
-              2022-01-23
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E6%80%9D%E8%B7%AF/">思路</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%9B%BE%E7%89%87%E6%9C%AC%E5%9C%B0/">图片本地</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/p/1dbfa096.html" target="_self">
-          hexo的备份以及数据恢复
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/p/1dbfa096.html" target="_self">
-          
-          为了防止误操作或计算机崩溃导致的博客源文件丢失 或满足我们更换电脑进行写作的需求，定期进行备份与恢复就显得很重要了 开始备份我们在进行备份时，并不需要将整个博客目录全部备份，只备份以下几个用户自定义的即可 scaffolds目录，source目录，themes目录，.gitignore文件，_config.yml文件，package.json文件 其他都是通用的 首先我们先来观察整个博客目录的结构
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-01-23 14:16" pubdate>
-              2022-01-23
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%A4%87%E4%BB%BD/">备份</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/">数据备份</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
     </div>
-  </div>
+
+    <a class="read-more" href="/p/13aa859c.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/p/c61767a5.html">
+                        新机装npm报错解决方法
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        解决方法以管理员身份打开windos Powershell 并键入以下命令
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+
+npm install --global --prod...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Tue Feb 14 2023 10:33:06 GMT+0800">
+                2023-02-14
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a class="read-more" href="/p/c61767a5.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/p/f5bf8885.html">
+                        记录一下Linux常用的screen工具命令
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        我们用 VPS 执行一个系统安装，就输入命令然后在那一直等。如果出现掉线或者断网死机的情况，我们还得重新安装。如果能使用上 screen 命令可以实现无人值守的效果。我们可以同时操作多个任务，也可以关机操作。所以说很方便。
+安装与使用1、安装方法：y...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Mon Dec 12 2022 19:40:39 GMT+0800">
+                2022-12-12
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a class="read-more" href="/p/f5bf8885.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/p/3d4fc856.html">
+                        记录一下部署hellohao图床的坑
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        前言考虑到图片存储问题，还是不建议图片存在一些市面上免费的图床
+所以打算搭建一款自己的图床，用于图片的存储，在朋友的了解到，才知道hellohao这个程序很不错
+于是自己入手了hellohao的core版本，也就是付费版本
+因为这个程序属于java开...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Mon Dec 12 2022 19:40:39 GMT+0800">
+                2022-12-12
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a class="read-more" href="/p/3d4fc856.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/p/3dfe0e1e.html">
+                        hexo推送报错解决方法
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        好久不更新hexo博客，今天发现一个问题，发现
+hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+
+将新的hexo文章部署到github pages会提示错误
+fatal: unable to access...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Mon Dec 12 2022 19:40:39 GMT+0800">
+                2022-12-12
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a class="read-more" href="/p/3dfe0e1e.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/p/acd7a6a9.html">
+                        记录一下Linux安装x-ui和bbr加速
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        由于centos系统过于老旧，又不知道之前下载了什么插件
+索性给自己的机器进行了一次系统重装，升级为centos7.0
+写这篇笔记记录一下纯净的centos系统安装bbr和x-ui面板
+安装centos依赖更新系统yum -y update
+
+由于我...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Mon Dec 12 2022 19:40:39 GMT+0800">
+                2022-12-12
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a class="read-more" href="/p/acd7a6a9.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/p/27ad136a.html">
+                        记录一些常用的docker命令与项目
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        最近喜欢上了docker部署，但是有些命令去文档看
+官网老慢了，一些常用的指令记录下来，用来备忘
+常用指令一键查看正在运行容器docker ps
+
+设置容器执行服务器开启自启sudo docker update 容器的id --restart=alw...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Mon Dec 12 2022 19:40:39 GMT+0800">
+                2022-12-12
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a class="read-more" href="/p/27ad136a.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/p/49292a36.html">
+                        hexo解决图片本地化的问题
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        仔细看了很多hexo的博客，基本上都是纯文字的博客
+长篇大论的文字，会产生一定的视觉疲劳
+写文章要图文并茂，这样自己看也舒服，读者也舒服
+typroa是一个可以沉浸式写作的好用的软件，软件本身也自带了很多功能
+市面上也有很多速度很快的图床，但是数据放...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Mon Dec 12 2022 19:40:39 GMT+0800">
+                2022-12-12
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a class="read-more" href="/p/49292a36.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/p/1dbfa096.html">
+                        hexo的备份以及数据恢复
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        为了防止误操作或计算机崩溃导致的博客源文件丢失
+或满足我们更换电脑进行写作的需求，定期进行备份与恢复就显得很重要了
+开始备份我们在进行备份时，并不需要将整个博客目录全部备份，只备份以下几个用户自定义的即可
+scaffolds目录，source目录，t...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Mon Dec 12 2022 19:40:39 GMT+0800">
+                2022-12-12
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a class="read-more" href="/p/1dbfa096.html">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
     
 
     
-  </main>
+        <a class="next btn"
+           href="/page/2/"
+        >下一页</a>
+    
+</div>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <i class="iconfont icon-love"></i> <a href="https://moe.vin" target="_blank" rel="nofollow noopener"><span>Moe</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
-  
+    </div>
+</div>
 
-  
 
-  
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2020</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">小赵同学</a>
+            
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
 </footer>
 
+        </div>
+    </div>
 
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+    
 
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+    
 
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
+</main>
 
 
 
 
 
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
 
 
 
@@ -729,11 +581,17 @@
 
 
 
+    
+<script src="/js/code-block.js"></script>
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
+
+
+<div class="post-scripts">
+    
+</div>
+
 
 
 </body>

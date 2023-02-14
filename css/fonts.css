@@ -1,7 +1,0 @@
-@font-face {
-  font-family: "zhanku";
-  src: url("/css/zhanku.woff2") format("woff2"),
-    url("/css/zhanku.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}

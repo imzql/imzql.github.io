@@ -32,97 +32,6 @@ git config --global core.autocrlf false
 ]]></content>
   </entry>
   <entry>
-    <title>hexo的备份以及数据恢复</title>
-    <url>/p/1dbfa096.html</url>
-    <content><![CDATA[<p>为了防止误操作或计算机崩溃导致的博客源文件丢失</p>
-<p>或满足我们更换电脑进行写作的需求，定期进行备份与恢复就显得很重要了</p>
-<h3 id="开始备份"><a href="#开始备份" class="headerlink" title="开始备份"></a>开始备份</h3><p>我们在进行备份时，并不需要将整个博客目录全部备份，只备份以下几个用户自定义的即可</p>
-<p>scaffolds目录，source目录，themes目录，.gitignore文件，_config.yml文件，package.json文件</p>
-<p>其他都是通用的</p>
-<p>首先我们先来观察整个博客目录的结构：</p>
-<p>(1) .deploy_git 本目录会在我们部署时生成，也就是github上保存的文件，无需备份。</p>
-<p>(2) node_modules 本目录包含了hexo博客依赖的模块，安装时自动生成，无需备份。</p>
-<p>(3) public 与.deploy_git类似，是编译后生成的文件静态网页文件，无需备份。</p>
-<p>(4) scaffolds 保存了用户文章的模板，需要备份。</p>
-<p>(5) source 保存了用户文章的源文件，需要备份。</p>
-<p>(6) themes 保存了用户下载的主题文件与配置，需要备份。</p>
-<p>(7) .gitignore 保存了推送到github时忽略的文件名，需要备份。</p>
-<p>(8) _config.yml 保存了用户配置信息，需要备份。</p>
-<p>(9) db.json 保存了网页的数据文件，在编译生成静态网页时会自动更新，无需备份。</p>
-<p>(10) package.json 保存了依赖的模块列表，需要备份。</p>
-<p>(11) package-lock.json 保存了依赖的模块安装记录，无需备份。</p>
-<h3 id="备份操作"><a href="#备份操作" class="headerlink" title="备份操作"></a>备份操作</h3><p>在了解了需要备份的文件后，就可以进行备份了</p>
-<p>可以手动找到这些文件并将其拷贝出来，或者上传到云端</p>
-<p>例如比较好用的托管平台github，码云，阿里云盘</p>
-<h3 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h3><p>如果电脑上已经安装了hexo博客，由于某些误操作只是想恢复到之前备份的状态的话</p>
-<p>只需要将备份的那六个文件和目录覆盖当前博客相应的文件和目录即可</p>
-<p>如果已经换到新电脑，可以进行如下操作</p>
-<h3 id="安装git-bash和node-js"><a href="#安装git-bash和node-js" class="headerlink" title="安装git bash和node.js"></a>安装git bash和node.js</h3><p>安装后可以在cmd中输入<code>git version</code>，<code>node -v</code>，<code>npm -v</code>查看版本来检测是否成功安装</p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在cmd中输入<code>npm install -g hexo-cli</code></p>
-<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>在想要保存hexo目录的位置，右键打开git bash here</p>
-<p>执行<code>hexo init</code></p>
-<h3 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h3><p>将备份的六个文件和目录覆盖到当前博客目录，恢复操作完成，可以<code>hexo g</code>，<code>hexo s</code>进行检验</p>
-<p>是不是非常简单</p>
-<h3 id="一键指令"><a href="#一键指令" class="headerlink" title="一键指令"></a>一键指令</h3><p>一键本地预览</p>
-<pre><code>hexo c &amp;&amp; hexo g &amp;&amp; hexo s
-</code></pre>
-<p>一键部署到github pages</p>
-<pre><code>hexo c &amp;&amp; hexo g &amp;&amp; hexo d
-</code></pre>
-<p>感谢您的阅读</p>
-]]></content>
-      <categories>
-        <category>备份</category>
-      </categories>
-      <tags>
-        <tag>数据备份</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo解决图片本地化的问题</title>
-    <url>/p/49292a36.html</url>
-    <content><![CDATA[<p>仔细看了很多hexo的博客，基本上都是纯文字的博客</p>
-<p>长篇大论的文字，会产生一定的视觉疲劳</p>
-<p>写文章要图文并茂，这样自己看也舒服，读者也舒服</p>
-<p>typroa是一个可以沉浸式写作的好用的软件，软件本身也自带了很多功能</p>
-<p>市面上也有很多速度很快的图床，但是数据放在别人那里，总还是感觉不太靠谱</p>
-<p>我在想，有没有一种方法，可以使自己的hexo文章的图片本地化呢</p>
-<p>下午找了很久，问了很多大佬，简单记录一下实现的思路</p>
-<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>去自己本地的博客文件夹git bash 一下，安装上传插件</p>
-<pre><code>npm install hexo-renderer-marked --save
-</code></pre>
-<p>再修改一下自己的hexo博客的配置文件_config.yml，加入下面的配置</p>
-<pre><code>marked:
-  prependRoot: true
-  postAsset: true
-</code></pre>
-<p>在自己的hexo博客的文件夹里的source”下新建”imags”文件夹</p>
-<p>在这里，需要注意”imags”与”_posts”同级，否则会出错</p>
-<p>在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p>
-<pre><code>../../source/images//$&#123;filename&#125;
-</code></pre>
-<p>可以参考一下下面的图片</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="../images/hexo%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E6%9C%AC%E5%9C%B0%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/1.png"
-                      alt="1"
-                ></p>
-<p>在typroa的菜单里面找到格式</p>
-<p>在”格式-&gt;图像-&gt;设置图片根目录“将”你的hexo博客文件夹-&gt;source”设置为根目录</p>
-<p>这样就实现了图片本地化，即使换电脑，也可以备份迁移了</p>
-<h3 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h3><p>顺便提醒一下我遇到的问题，有时候图片会显示上传失败，大概率是图片的文件名过长</p>
-<p>建议把图片的文件名重命名为数字再上传，可以解决这个问题</p>
-<p class="note note-success">感谢您的阅读</p>
-]]></content>
-      <categories>
-        <category>思路</category>
-      </categories>
-      <tags>
-        <tag>图片本地</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的c语言学习笔记</title>
     <url>/p/306f1f3b.html</url>
     <content><![CDATA[<h1 id="入门阶段-认识C语言"><a href="#入门阶段-认识C语言" class="headerlink" title="入门阶段 认识C语言"></a>入门阶段 认识C语言</h1><h2 id="1-进制的转换"><a href="#1-进制的转换" class="headerlink" title="1.进制的转换"></a>1.进制的转换</h2><p>十进制：有 0 - 9 共十个数字，逢十进一</p>
@@ -269,72 +178,108 @@ git config --global core.autocrlf false
       </tags>
   </entry>
   <entry>
-    <title>我的python笔记</title>
-    <url>/p/13aa859c.html</url>
-    <content><![CDATA[<h2 id="python笔记总结"><a href="#python笔记总结" class="headerlink" title="python笔记总结"></a>python笔记总结</h2><h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>and or not</p>
-<p>相对比c语言，语法有一些不同，&amp;&amp;(且)，||(或)，!(非)；</p>
-<p>逻辑运算符语法</p>
-<p>and 一假则假，指的是两个需要bool值为true才返回true</p>
-<p>or  一真则真，指的是任意一个条件，bool值为true，就返回true</p>
-<p>not 遇真则假，遇假则真，遇到true返回false，遇到false返回true</p>
+    <title>hexo解决图片本地化的问题</title>
+    <url>/p/49292a36.html</url>
+    <content><![CDATA[<p>仔细看了很多hexo的博客，基本上都是纯文字的博客</p>
+<p>长篇大论的文字，会产生一定的视觉疲劳</p>
+<p>写文章要图文并茂，这样自己看也舒服，读者也舒服</p>
+<p>typroa是一个可以沉浸式写作的好用的软件，软件本身也自带了很多功能</p>
+<p>市面上也有很多速度很快的图床，但是数据放在别人那里，总还是感觉不太靠谱</p>
+<p>我在想，有没有一种方法，可以使自己的hexo文章的图片本地化呢</p>
+<p>下午找了很久，问了很多大佬，简单记录一下实现的思路</p>
+<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>去自己本地的博客文件夹git bash 一下，安装上传插件</p>
+<pre><code>npm install hexo-renderer-marked --save
+</code></pre>
+<p>再修改一下自己的hexo博客的配置文件_config.yml，加入下面的配置</p>
+<pre><code>marked:
+  prependRoot: true
+  postAsset: true
+</code></pre>
+<p>在自己的hexo博客的文件夹里的source”下新建”imags”文件夹</p>
+<p>在这里，需要注意”imags”与”_posts”同级，否则会出错</p>
+<p>在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p>
+<pre><code>../../source/images//$&#123;filename&#125;
+</code></pre>
+<p>可以参考一下下面的图片</p>
+<p><img src="../images/hexo%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E6%9C%AC%E5%9C%B0%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/1.png" alt="1"></p>
+<p>在typroa的菜单里面找到格式</p>
+<p>在”格式-&gt;图像-&gt;设置图片根目录“将”你的hexo博客文件夹-&gt;source”设置为根目录</p>
+<p>这样就实现了图片本地化，即使换电脑，也可以备份迁移了</p>
+<h3 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h3><p>顺便提醒一下我遇到的问题，有时候图片会显示上传失败，大概率是图片的文件名过长</p>
+<p>建议把图片的文件名重命名为数字再上传，可以解决这个问题</p>
+<p class="note note-success">感谢您的阅读</p>
 ]]></content>
       <categories>
-        <category>python笔记</category>
+        <category>思路</category>
       </categories>
       <tags>
-        <tag>python笔记</tag>
+        <tag>图片本地</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo的备份以及数据恢复</title>
+    <url>/p/1dbfa096.html</url>
+    <content><![CDATA[<p>为了防止误操作或计算机崩溃导致的博客源文件丢失</p>
+<p>或满足我们更换电脑进行写作的需求，定期进行备份与恢复就显得很重要了</p>
+<h3 id="开始备份"><a href="#开始备份" class="headerlink" title="开始备份"></a>开始备份</h3><p>我们在进行备份时，并不需要将整个博客目录全部备份，只备份以下几个用户自定义的即可</p>
+<p>scaffolds目录，source目录，themes目录，.gitignore文件，_config.yml文件，package.json文件</p>
+<p>其他都是通用的</p>
+<p>首先我们先来观察整个博客目录的结构：</p>
+<p>(1) .deploy_git 本目录会在我们部署时生成，也就是github上保存的文件，无需备份。</p>
+<p>(2) node_modules 本目录包含了hexo博客依赖的模块，安装时自动生成，无需备份。</p>
+<p>(3) public 与.deploy_git类似，是编译后生成的文件静态网页文件，无需备份。</p>
+<p>(4) scaffolds 保存了用户文章的模板，需要备份。</p>
+<p>(5) source 保存了用户文章的源文件，需要备份。</p>
+<p>(6) themes 保存了用户下载的主题文件与配置，需要备份。</p>
+<p>(7) .gitignore 保存了推送到github时忽略的文件名，需要备份。</p>
+<p>(8) _config.yml 保存了用户配置信息，需要备份。</p>
+<p>(9) db.json 保存了网页的数据文件，在编译生成静态网页时会自动更新，无需备份。</p>
+<p>(10) package.json 保存了依赖的模块列表，需要备份。</p>
+<p>(11) package-lock.json 保存了依赖的模块安装记录，无需备份。</p>
+<h3 id="备份操作"><a href="#备份操作" class="headerlink" title="备份操作"></a>备份操作</h3><p>在了解了需要备份的文件后，就可以进行备份了</p>
+<p>可以手动找到这些文件并将其拷贝出来，或者上传到云端</p>
+<p>例如比较好用的托管平台github，码云，阿里云盘</p>
+<h3 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h3><p>如果电脑上已经安装了hexo博客，由于某些误操作只是想恢复到之前备份的状态的话</p>
+<p>只需要将备份的那六个文件和目录覆盖当前博客相应的文件和目录即可</p>
+<p>如果已经换到新电脑，可以进行如下操作</p>
+<h3 id="安装git-bash和node-js"><a href="#安装git-bash和node-js" class="headerlink" title="安装git bash和node.js"></a>安装git bash和node.js</h3><p>安装后可以在cmd中输入<code>git version</code>，<code>node -v</code>，<code>npm -v</code>查看版本来检测是否成功安装</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在cmd中输入<code>npm install -g hexo-cli</code></p>
+<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>在想要保存hexo目录的位置，右键打开git bash here</p>
+<p>执行<code>hexo init</code></p>
+<h3 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h3><p>将备份的六个文件和目录覆盖到当前博客目录，恢复操作完成，可以<code>hexo g</code>，<code>hexo s</code>进行检验</p>
+<p>是不是非常简单</p>
+<h3 id="一键指令"><a href="#一键指令" class="headerlink" title="一键指令"></a>一键指令</h3><p>一键本地预览</p>
+<pre><code>hexo c &amp;&amp; hexo g &amp;&amp; hexo s
+</code></pre>
+<p>一键部署到github pages</p>
+<pre><code>hexo c &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre>
+<p>感谢您的阅读</p>
+]]></content>
+      <categories>
+        <category>备份</category>
+      </categories>
+      <tags>
+        <tag>数据备份</tag>
       </tags>
   </entry>
   <entry>
     <title>新机装npm报错解决方法</title>
     <url>/p/c61767a5.html</url>
     <content><![CDATA[<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>以管理员身份打开windos Powershell 并键入以下命令</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> Unrestricted <span class="hljs-literal">-Scope</span> CurrentUser <span class="hljs-literal">-Force</span><br><br>npm install <span class="hljs-literal">--global</span> <span class="hljs-literal">--production</span> npm<span class="hljs-literal">-windows-upgrade</span><br><br>npm<span class="hljs-literal">-windows-upgrade</span> <span class="hljs-literal">--npm-version</span> latest<br></code></pre></td></tr></table></figure>
+<pre><code class="powershell">Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 
+npm install --global --production npm-windows-upgrade
+
+npm-windows-upgrade --npm-version latest
+</code></pre>
 <p>使用淘宝镜像 cnpm</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs powershell">npm install cnpm <span class="hljs-literal">-g</span><br><br>npm install cnpm <span class="hljs-literal">-g</span> <span class="hljs-literal">--registry</span>=https://registry.npm.taobao.org<br></code></pre></td></tr></table></figure>
+<pre><code class="powershell">npm install cnpm -g
 
+npm install cnpm -g --registry=https://registry.npm.taobao.org
+</code></pre>
 <p>解决了</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>记录一下Linux安装x-ui和bbr加速</title>
-    <url>/p/acd7a6a9.html</url>
-    <content><![CDATA[<p>由于centos系统过于老旧，又不知道之前下载了什么插件</p>
-<p>索性给自己的机器进行了一次系统重装，升级为centos7.0</p>
-<p>写这篇笔记记录一下纯净的centos系统安装bbr和x-ui面板</p>
-<h3 id="安装centos依赖"><a href="#安装centos依赖" class="headerlink" title="安装centos依赖"></a>安装centos依赖</h3><h4 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h4><pre><code>yum -y update
-</code></pre>
-<p>由于我们主要是安装x-ui不需要安装什么插件啥的</p>
-<h3 id="安装x-ui面板"><a href="#安装x-ui面板" class="headerlink" title="安装x-ui面板"></a>安装x-ui面板</h3><h4 id="安装一键脚本"><a href="#安装一键脚本" class="headerlink" title="安装一键脚本"></a>安装一键脚本</h4><pre><code>bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
-</code></pre>
-<p>准备尝试docker安装，但是比较繁琐，暂时不折腾了</p>
-<h4 id="登陆x-ui面板"><a href="#登陆x-ui面板" class="headerlink" title="登陆x-ui面板"></a>登陆x-ui面板</h4><p>因为x-ui默认是54321端口，直接使用ip+端口54321进行访问</p>
-<h3 id="安装bbr加速"><a href="#安装bbr加速" class="headerlink" title="安装bbr加速"></a>安装bbr加速</h3><p>使用以下的一键脚本进行安装bbr即可</p>
-<pre><code>wget -N --no-check-certificate &quot;https://gist.github.com/zeruns/a0ec603f20d1b86de6a774a8ba27588f/raw/4f9957ae23f5efb2bb7c57a198ae2cffebfb1c56/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh
-</code></pre>
-<p>首先安装bbr内核和bbr内核魔改版</p>
-<p>然后启用bbr内核的魔改版即可</p>
-<h3 id="安装防火墙"><a href="#安装防火墙" class="headerlink" title="安装防火墙"></a>安装防火墙</h3><p>如果不记得指令，可以使用这个命令</p>
-<pre><code>firewall-cmd --zone=public --add-port=14530/tcp --permanent
-</code></pre>
-<p>到时候Linux系统会提示没有安装防火墙，根据提示安装防火墙</p>
-<p>安装完成后需要给x-ui面板开放54321端口</p>
-<p>直接执行以下指令</p>
-<pre><code>firewall-cmd --zone=public --add-port=54321/tcp --permanent
-</code></pre>
-<p>然后x-ui面板开启了之后需要开放对应端口直接对以上代码进行端口数值修改即可</p>
-<p>防火墙开启但是不会立即生效，需要使用以下命令进行对防火墙端口修改立即生效</p>
-<pre><code>firewall-cmd --reload
-</code></pre>
-<p>ok，搞定了</p>
-]]></content>
-      <categories>
-        <category>x-ui面板安装</category>
-      </categories>
-      <tags>
-        <tag>x-ui</tag>
-      </tags>
   </entry>
   <entry>
     <title>记录一下Linux常用的screen工具命令</title>
@@ -366,6 +311,23 @@ apt-get install screen  #Debian或者Ubuntu
       </categories>
       <tags>
         <tag>screen</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的python笔记</title>
+    <url>/p/13aa859c.html</url>
+    <content><![CDATA[<h2 id="python笔记总结"><a href="#python笔记总结" class="headerlink" title="python笔记总结"></a>python笔记总结</h2><h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>and or not</p>
+<p>相对比c语言，语法有一些不同，&amp;&amp;(且)，||(或)，!(非)；</p>
+<p>逻辑运算符语法</p>
+<p>and 一假则假，指的是两个需要bool值为true才返回true</p>
+<p>or  一真则真，指的是任意一个条件，bool值为true，就返回true</p>
+<p>not 遇真则假，遇假则真，遇到true返回false，遇到false返回true</p>
+]]></content>
+      <categories>
+        <category>python笔记</category>
+      </categories>
+      <tags>
+        <tag>python笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -417,6 +379,45 @@ apt-get install screen  #Debian或者Ubuntu
       </categories>
       <tags>
         <tag>hellohao图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录一下Linux安装x-ui和bbr加速</title>
+    <url>/p/acd7a6a9.html</url>
+    <content><![CDATA[<p>由于centos系统过于老旧，又不知道之前下载了什么插件</p>
+<p>索性给自己的机器进行了一次系统重装，升级为centos7.0</p>
+<p>写这篇笔记记录一下纯净的centos系统安装bbr和x-ui面板</p>
+<h3 id="安装centos依赖"><a href="#安装centos依赖" class="headerlink" title="安装centos依赖"></a>安装centos依赖</h3><h4 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h4><pre><code>yum -y update
+</code></pre>
+<p>由于我们主要是安装x-ui不需要安装什么插件啥的</p>
+<h3 id="安装x-ui面板"><a href="#安装x-ui面板" class="headerlink" title="安装x-ui面板"></a>安装x-ui面板</h3><h4 id="安装一键脚本"><a href="#安装一键脚本" class="headerlink" title="安装一键脚本"></a>安装一键脚本</h4><pre><code>bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+</code></pre>
+<p>准备尝试docker安装，但是比较繁琐，暂时不折腾了</p>
+<h4 id="登陆x-ui面板"><a href="#登陆x-ui面板" class="headerlink" title="登陆x-ui面板"></a>登陆x-ui面板</h4><p>因为x-ui默认是54321端口，直接使用ip+端口54321进行访问</p>
+<h3 id="安装bbr加速"><a href="#安装bbr加速" class="headerlink" title="安装bbr加速"></a>安装bbr加速</h3><p>使用以下的一键脚本进行安装bbr即可</p>
+<pre><code>wget -N --no-check-certificate &quot;https://gist.github.com/zeruns/a0ec603f20d1b86de6a774a8ba27588f/raw/4f9957ae23f5efb2bb7c57a198ae2cffebfb1c56/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh
+</code></pre>
+<p>首先安装bbr内核和bbr内核魔改版</p>
+<p>然后启用bbr内核的魔改版即可</p>
+<h3 id="安装防火墙"><a href="#安装防火墙" class="headerlink" title="安装防火墙"></a>安装防火墙</h3><p>如果不记得指令，可以使用这个命令</p>
+<pre><code>firewall-cmd --zone=public --add-port=14530/tcp --permanent
+</code></pre>
+<p>到时候Linux系统会提示没有安装防火墙，根据提示安装防火墙</p>
+<p>安装完成后需要给x-ui面板开放54321端口</p>
+<p>直接执行以下指令</p>
+<pre><code>firewall-cmd --zone=public --add-port=54321/tcp --permanent
+</code></pre>
+<p>然后x-ui面板开启了之后需要开放对应端口直接对以上代码进行端口数值修改即可</p>
+<p>防火墙开启但是不会立即生效，需要使用以下命令进行对防火墙端口修改立即生效</p>
+<pre><code>firewall-cmd --reload
+</code></pre>
+<p>ok，搞定了</p>
+]]></content>
+      <categories>
+        <category>x-ui面板安装</category>
+      </categories>
+      <tags>
+        <tag>x-ui</tag>
       </tags>
   </entry>
   <entry>
