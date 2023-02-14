@@ -6,7 +6,7 @@
   <link href="https://moe.vin/atom.xml" rel="self"/>
   
   <link href="https://moe.vin/"/>
-  <updated>2023-02-14T03:13:01.547Z</updated>
+  <updated>2023-02-14T03:19:31.442Z</updated>
   <id>https://moe.vin/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
@@ -16,7 +16,7 @@
     <link href="https://moe.vin/p/b287a84e.html"/>
     <id>https://moe.vin/p/b287a84e.html</id>
     <published>2023-02-14T03:11:13.000Z</published>
-    <updated>2023-02-14T03:13:01.547Z</updated>
+    <updated>2023-02-14T03:19:31.442Z</updated>
     
     <content type="html"><![CDATA[<p>基本指令</p><p><code>Hexo init</code>初始化博客<br><code>Hexo n 标题</code> 创建一篇文章<br><code>Hexo clean</code> 清理文件<br><code>Hexo g</code> 生成静态文件<br><code>Hexo d</code> 部署博客<br><code>hexo server</code>启动本地服务<br><code>hexo render</code>渲染文件</p><p>一键本地预览</p><pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code></pre><p>一键推送到github</p><pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre>]]></content>
     
