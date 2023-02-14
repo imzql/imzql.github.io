@@ -1,158 +1,202 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang="zh-CN">
 <head>
-    <!-- so meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="前言考虑到图片存储问题，还是不建议图片存在一些市面上免费的图床 所以打算搭建一款自己的图床，用于图片的存储，在朋友的了解到，才知道hellohao这个程序很不错 于是自己入手了hellohao的core版本，也就是付费版本 因为这个程序属于java开发的web程序，前后端分离，主要是后端提供图片存储服务 也就是可以把前端，后端，分别部署在两个服务器，这样可以有效的防止前端页面被不法分子攻击 导致自">
-<meta property="og:type" content="article">
-<meta property="og:title" content="记录一下部署hellohao图床的坑">
-<meta property="og:url" content="https://moe.vin/p/3d4fc856.html">
-<meta property="og:site_name">
-<meta property="og:description" content="前言考虑到图片存储问题，还是不建议图片存在一些市面上免费的图床 所以打算搭建一款自己的图床，用于图片的存储，在朋友的了解到，才知道hellohao这个程序很不错 于是自己入手了hellohao的core版本，也就是付费版本 因为这个程序属于java开发的web程序，前后端分离，主要是后端提供图片存储服务 也就是可以把前端，后端，分别部署在两个服务器，这样可以有效的防止前端页面被不法分子攻击 导致自">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-08T07:47:22.000Z">
-<meta property="article:modified_time" content="2022-12-12T11:40:39.618Z">
-<meta property="article:tag" content="hellohao图床">
-<meta name="twitter:card" content="summary">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hello , friend ! Please call me xiao Zhao classmate , this is xiao zhao classmate&#39;s blog , welcome to visit my website , here is also my personal notebook.">
+    <meta name="author" content="小赵同学">
     
-    
-      
+    <title>
         
-          <link rel="shortcut icon" href="https://img.usj.cc/i/2022/07/13/62ce56a88071e.jpg">
+            记录一下部署hellohao图床的坑 |
         
-      
-      
-        
-          <link rel="icon" type="image/png" href="https://img.usj.cc/i/2022/07/13/62ce56a88071e.jpg" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="https://img.usj.cc/i/2022/07/13/62ce56a88071e.jpg">
-        
-      
-    
-    <!-- title -->
-    <title>记录一下部署hellohao图床的坑</title>
-    <!-- styles -->
+        moe
+    </title>
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <!-- persian styles -->
+    <link rel="shortcut icon" href="https://q.qlogo.cn/g?b=qq&nk=1770186415&s=100">
     
-    <!-- rss -->
-    
-    
-      <link rel="alternate" href="/true" title="" type="application/atom+xml" />
-    
-	<!-- mathjax -->
-	
-<meta name="generator" content="Hexo 6.3.0"></head>
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="目录"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-        <!--
-       --><li><a href="/">首页</a></li><!--
-     --><!--
-       --><li><a href="/archives/">归档</a></li><!--
-     -->
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" aria-label="上一篇" href="/p/f5bf8885.html"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" aria-label="下一篇" href="/p/3dfe0e1e.html"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="分享文章" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">上一篇</span>
-      <span id="i-next" class="info" style="display:none;">下一篇</span>
-      <span id="i-top" class="info" style="display:none;">返回顶部</span>
-      <span id="i-share" class="info" style="display:none;">分享文章</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://moe.vin/p/3d4fc856.html"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://moe.vin/p/3d4fc856.html&text=记录一下部署hellohao图床的坑"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://moe.vin/p/3d4fc856.html&title=记录一下部署hellohao图床的坑"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://moe.vin/p/3d4fc856.html&is_video=false&description=记录一下部署hellohao图床的坑"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=记录一下部署hellohao图床的坑&body=Check out this article: https://moe.vin/p/3d4fc856.html"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://moe.vin/p/3d4fc856.html&title=记录一下部署hellohao图床的坑"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://moe.vin/p/3d4fc856.html&title=记录一下部署hellohao图床的坑"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://moe.vin/p/3d4fc856.html&title=记录一下部署hellohao图床的坑"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://moe.vin/p/3d4fc856.html&title=记录一下部署hellohao图床的坑"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://moe.vin/p/3d4fc856.html&name=记录一下部署hellohao图床的坑&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://moe.vin/p/3d4fc856.html&t=记录一下部署hellohao图床的坑"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"moe.vin","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"https://q.qlogo.cn/g?b=qq&nk=1770186415&s=100","favicon":"https://q.qlogo.cn/g?b=qq&nk=1770186415&s=100","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"风吹云散，云卷云舒."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="null" type="application/atom+xml">
+</head>
 
-    </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-number">2.</span> <span class="toc-text">环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%A5%BDDebian"><span class="toc-number">2.1.</span> <span class="toc-text">安装好Debian</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%A5%BD%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF"><span class="toc-number">2.2.</span> <span class="toc-text">安装好宝塔面板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEjava%E5%8F%98%E9%87%8F"><span class="toc-number">2.3.</span> <span class="toc-text">配置java变量</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDjdk1-8"><span class="toc-number">2.3.1.</span> <span class="toc-text">下载jdk1.8</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEjava%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">2.3.2.</span> <span class="toc-text">配置java环境变量</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F"><span class="toc-number">2.4.</span> <span class="toc-text">结束</span></a></li></ol></li></ol>
-    </div>
-  </span>
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
 </div>
 
+
+<main class="page-container">
+
     
-    <div class="content index py4">
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                moe
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">记录一下部署hellohao图床的坑</span>
+        </div>
+
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://q.qlogo.cn/g?b=qq&nk=1770186415&s=100">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">小赵同学</span>
+                        
+                            <span class="author-label">努力学习的小菜鸟</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-08 15:47:22</span>
+        <span class="mobile">2022-03-08 15:47</span>
+    </span>
     
-    <h1 class="posttitle" itemprop="name headline">
-        记录一下部署hellohao图床的坑
-    </h1>
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E9%83%A8%E7%BD%B2hellohao%E5%9B%BE%E5%BA%8A/">部署hellohao图床</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/hellohao%E5%9B%BE%E5%BA%8A/">hellohao图床</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>647 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
-
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name"></span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2022-03-08T07:47:22.000Z" itemprop="datePublished">2022-03-08</time>
+                    </div>
+                </div>
+            </div>
         
-      
-    </div>
 
-
-      
-    <div class="article-category">
-        <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/%E9%83%A8%E7%BD%B2hellohao%E5%9B%BE%E5%BA%8A/">部署hellohao图床</a>
-    </div>
-
-
-      
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/hellohao%E5%9B%BE%E5%BA%8A/" rel="tag">hellohao图床</a>
-    </div>
-
-
-    </div>
-  </header>
-  
-
-  <div class="content" itemprop="articleBody">
-    <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>考虑到图片存储问题，还是不建议图片存在一些市面上免费的图床</p>
+        <div class="article-content markdown-body">
+            <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>考虑到图片存储问题，还是不建议图片存在一些市面上免费的图床</p>
 <p>所以打算搭建一款自己的图床，用于图片的存储，在朋友的了解到，才知道hellohao这个程序很不错</p>
 <p>于是自己入手了hellohao的core版本，也就是付费版本</p>
 <p>因为这个程序属于java开发的web程序，前后端分离，主要是后端提供图片存储服务</p>
@@ -163,163 +207,279 @@
 <h5 id="安装好Debian"><a href="#安装好Debian" class="headerlink" title="安装好Debian"></a>安装好Debian</h5><p>因为我的服务器在腾讯云，腾讯云已经给了系统镜像</p>
 <h5 id="安装好宝塔面板"><a href="#安装好宝塔面板" class="headerlink" title="安装好宝塔面板"></a>安装好宝塔面板</h5><p>这里访问bt.cn然后copy对应的脚本安装指令即可</p>
 <h5 id="配置java变量"><a href="#配置java变量" class="headerlink" title="配置java变量"></a>配置java变量</h5><h6 id="下载jdk1-8"><a href="#下载jdk1-8" class="headerlink" title="下载jdk1.8"></a>下载jdk1.8</h6><p>这里我已经上传到我的百度网盘，直接下载下来就好了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1A1W7Ty91_cDA2YRoluV_bg?pwd=qb9q </span><br><span class="line">提取码：qb9q</span><br></pre></td></tr></table></figure>
-
+<pre><code>链接：https://pan.baidu.com/s/1A1W7Ty91_cDA2YRoluV_bg?pwd=qb9q 
+提取码：qb9q
+</code></pre>
 <p>我们直接进入宝塔面板的文件根目录，然后找到以下地址</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/java</span><br></pre></td></tr></table></figure>
-
+<pre><code>/usr/java
+</code></pre>
 <p>如果没有java文件夹请新建一个即可，然后将下载好的jdk文件使用宝塔自带的方法进行解压</p>
 <p>解压好我的jdk文件夹的地址是这样</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/java/jdk1.8.0_181</span><br></pre></td></tr></table></figure>
-
+<pre><code>/usr/java/jdk1.8.0_181
+</code></pre>
 <h6 id="配置java环境变量"><a href="#配置java环境变量" class="headerlink" title="配置java环境变量"></a>配置java环境变量</h6><p>直接切换到该目录下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/lighthouse</span><br></pre></td></tr></table></figure>
-
+<pre><code>/home/lighthouse
+</code></pre>
 <p>如果没有请新建，然后找到.bashrc文件，然后打开编辑，在文件的最后一行加入以下代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_181</span><br><span class="line">       export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">       export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin</span><br></pre></td></tr></table></figure>
-
+<pre><code>export JAVA_HOME=/usr/java/jdk1.8.0_181
+       export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+       export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
+</code></pre>
 <p>这里我们需要刷新一下系统的java环境变量，我们链接好ssh到服务器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /home/lighthouse/.bashrc</span><br></pre></td></tr></table></figure>
-
+<pre><code>source /home/lighthouse/.bashrc
+</code></pre>
 <p>然后再输入环境是否安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
-
+<pre><code>java -version
+</code></pre>
 <p>输入以上代码即可，然后就可以按照官方的安装文档配置了</p>
 <p>记住这里如果系统返回nofound是指你的环境还没安装好，重新检查一下是那步有问题，再检查一下就好了！</p>
 <p>官方的配置文档</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://doc.wwery.com/#/internalversion</span><br></pre></td></tr></table></figure>
-
+<pre><code>http://doc.wwery.com/#/internalversion
+</code></pre>
 <h5 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h5>
-  </div>
-</article>
+        </div>
 
         
+
+        
+            <ul class="post-tags-box">
                 
-                        
+                    <li class="tag-item">
+                        <a href="/tags/hellohao%E5%9B%BE%E5%BA%8A/">#hellohao图床</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
         
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">首页</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/p/f5bf8885.html"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">记录一下Linux常用的screen工具命令</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/p/3dfe0e1e.html"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">hexo推送报错解决方法</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
         
-      </ul>
+
+        
     </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-number">2.</span> <span class="toc-text">环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%A5%BDDebian"><span class="toc-number">2.1.</span> <span class="toc-text">安装好Debian</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%A5%BD%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF"><span class="toc-number">2.2.</span> <span class="toc-text">安装好宝塔面板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEjava%E5%8F%98%E9%87%8F"><span class="toc-number">2.3.</span> <span class="toc-text">配置java变量</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDjdk1-8"><span class="toc-number">2.3.1.</span> <span class="toc-text">下载jdk1.8</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEjava%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">2.3.2.</span> <span class="toc-text">配置java环境变量</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F"><span class="toc-number">2.4.</span> <span class="toc-text">结束</span></a></li></ol></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://moe.vin/p/3d4fc856.html"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://moe.vin/p/3d4fc856.html&text=记录一下部署hellohao图床的坑"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://moe.vin/p/3d4fc856.html&title=记录一下部署hellohao图床的坑"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://moe.vin/p/3d4fc856.html&is_video=false&description=记录一下部署hellohao图床的坑"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=记录一下部署hellohao图床的坑&body=Check out this article: https://moe.vin/p/3d4fc856.html"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://moe.vin/p/3d4fc856.html&title=记录一下部署hellohao图床的坑"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://moe.vin/p/3d4fc856.html&title=记录一下部署hellohao图床的坑"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://moe.vin/p/3d4fc856.html&title=记录一下部署hellohao图床的坑"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://moe.vin/p/3d4fc856.html&title=记录一下部署hellohao图床的坑"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://moe.vin/p/3d4fc856.html&name=记录一下部署hellohao图床的坑&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://moe.vin/p/3d4fc856.html&t=记录一下部署hellohao图床的坑"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
-    </div>
-
-  </div>
 </div>
 
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">小赵同学</a>
+        </div>
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2019-2022
-    
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">首页</a></li><!--
-     --><!--
-       --><li><a href="/archives/">归档</a></li><!--
-     -->
-      </ul>
-    </nav>
-  </div>
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
 </footer>
 
+        </div>
     </div>
-    <!-- styles -->
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
 
 
 
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
 
-
-    <!-- jquery -->
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
-
-
-
-
-<!-- clipboard -->
-
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
-  
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
-    btn += '<i class="far fa-clone"></i>';
-    btn += '</span>'; 
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "复制成功！");
-      e.clearSelection();
-    })
-  })
-  </script>
-
+<script src="/js/utils.js"></script>
 
 <script src="/js/main.js"></script>
 
-<!-- search -->
+<script src="/js/header-shrink.js"></script>
 
-<!-- Google Analytics -->
+<script src="/js/back2top.js"></script>
 
-<!-- Baidu Analytics -->
+<script src="/js/dark-light-toggle.js"></script>
 
-<!-- Cloudflare Analytics -->
 
-<!-- Umami Analytics -->
 
-<!-- Disqus Comments -->
+    
+<script src="/js/local-search.js"></script>
 
-<!-- utterances Comments -->
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
 
 </body>
 </html>

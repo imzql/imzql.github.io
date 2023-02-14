@@ -1,316 +1,473 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang="zh-CN">
 <head>
-    <!-- so meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="由于centos系统过于老旧，又不知道之前下载了什么插件 索性给自己的机器进行了一次系统重装，升级为centos7.0 写这篇笔记记录一下纯净的centos系统安装bbr和x-ui面板 安装centos依赖更新系统1yum -y update  由于我们主要是安装x-ui不需要安装什么插件啥的 安装x-ui面板安装一键脚本1bash &lt;(curl -Ls https:&#x2F;&#x2F;raw.github">
-<meta property="og:type" content="article">
-<meta property="og:title" content="记录一下Linux安装x-ui和bbr加速">
-<meta property="og:url" content="https://moe.vin/p/acd7a6a9.html">
-<meta property="og:site_name">
-<meta property="og:description" content="由于centos系统过于老旧，又不知道之前下载了什么插件 索性给自己的机器进行了一次系统重装，升级为centos7.0 写这篇笔记记录一下纯净的centos系统安装bbr和x-ui面板 安装centos依赖更新系统1yum -y update  由于我们主要是安装x-ui不需要安装什么插件啥的 安装x-ui面板安装一键脚本1bash &lt;(curl -Ls https:&#x2F;&#x2F;raw.github">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-02-04T10:27:00.000Z">
-<meta property="article:modified_time" content="2022-12-12T11:40:39.704Z">
-<meta property="article:tag" content="x-ui">
-<meta name="twitter:card" content="summary">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hello , friend ! Please call me xiao Zhao classmate , this is xiao zhao classmate&#39;s blog , welcome to visit my website , here is also my personal notebook.">
+    <meta name="author" content="小赵同学">
     
-    
-      
+    <title>
         
-          <link rel="shortcut icon" href="https://img.usj.cc/i/2022/07/13/62ce56a88071e.jpg">
+            记录一下Linux安装x-ui和bbr加速 |
         
-      
-      
-        
-          <link rel="icon" type="image/png" href="https://img.usj.cc/i/2022/07/13/62ce56a88071e.jpg" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="https://img.usj.cc/i/2022/07/13/62ce56a88071e.jpg">
-        
-      
-    
-    <!-- title -->
-    <title>记录一下Linux安装x-ui和bbr加速</title>
-    <!-- styles -->
+        moe
+    </title>
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <!-- persian styles -->
+    <link rel="shortcut icon" href="https://q.qlogo.cn/g?b=qq&nk=1770186415&s=100">
     
-    <!-- rss -->
-    
-    
-      <link rel="alternate" href="/true" title="" type="application/atom+xml" />
-    
-	<!-- mathjax -->
-	
-<meta name="generator" content="Hexo 6.3.0"></head>
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="目录"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-        <!--
-       --><li><a href="/">首页</a></li><!--
-     --><!--
-       --><li><a href="/archives/">归档</a></li><!--
-     -->
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" aria-label="上一篇" href="/p/13aa859c.html"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" aria-label="下一篇" href="/p/27ad136a.html"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="分享文章" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">上一篇</span>
-      <span id="i-next" class="info" style="display:none;">下一篇</span>
-      <span id="i-top" class="info" style="display:none;">返回顶部</span>
-      <span id="i-share" class="info" style="display:none;">分享文章</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://moe.vin/p/acd7a6a9.html"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://moe.vin/p/acd7a6a9.html&text=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://moe.vin/p/acd7a6a9.html&title=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://moe.vin/p/acd7a6a9.html&is_video=false&description=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=记录一下Linux安装x-ui和bbr加速&body=Check out this article: https://moe.vin/p/acd7a6a9.html"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://moe.vin/p/acd7a6a9.html&title=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://moe.vin/p/acd7a6a9.html&title=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://moe.vin/p/acd7a6a9.html&title=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://moe.vin/p/acd7a6a9.html&title=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://moe.vin/p/acd7a6a9.html&name=记录一下Linux安装x-ui和bbr加速&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://moe.vin/p/acd7a6a9.html&t=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"moe.vin","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"https://q.qlogo.cn/g?b=qq&nk=1770186415&s=100","favicon":"https://q.qlogo.cn/g?b=qq&nk=1770186415&s=100","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"风吹云散，云卷云舒."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="null" type="application/atom+xml">
+</head>
 
-    </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85centos%E4%BE%9D%E8%B5%96"><span class="toc-number">1.</span> <span class="toc-text">安装centos依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.</span> <span class="toc-text">更新系统</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85x-ui%E9%9D%A2%E6%9D%BF"><span class="toc-number">2.</span> <span class="toc-text">安装x-ui面板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC"><span class="toc-number">2.1.</span> <span class="toc-text">安装一键脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BB%E9%99%86x-ui%E9%9D%A2%E6%9D%BF"><span class="toc-number">2.2.</span> <span class="toc-text">登陆x-ui面板</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85bbr%E5%8A%A0%E9%80%9F"><span class="toc-number">3.</span> <span class="toc-text">安装bbr加速</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">4.</span> <span class="toc-text">安装防火墙</span></a></li></ol>
-    </div>
-  </span>
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
 </div>
 
+
+<main class="page-container">
+
     
-    <div class="content index py4">
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                moe
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">记录一下Linux安装x-ui和bbr加速</span>
+        </div>
+
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://q.qlogo.cn/g?b=qq&nk=1770186415&s=100">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">小赵同学</span>
+                        
+                            <span class="author-label">努力学习的小菜鸟</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-02-04 18:27:00</span>
+        <span class="mobile">2022-02-04 18:27</span>
+    </span>
     
-    <h1 class="posttitle" itemprop="name headline">
-        记录一下Linux安装x-ui和bbr加速
-    </h1>
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/x-ui%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85/">x-ui面板安装</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/x-ui/">x-ui</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>406 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
-
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name"></span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2022-02-04T10:27:00.000Z" itemprop="datePublished">2022-02-04</time>
+                    </div>
+                </div>
+            </div>
         
-      
-    </div>
 
-
-      
-    <div class="article-category">
-        <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/x-ui%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85/">x-ui面板安装</a>
-    </div>
-
-
-      
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/x-ui/" rel="tag">x-ui</a>
-    </div>
-
-
-    </div>
-  </header>
-  
-
-  <div class="content" itemprop="articleBody">
-    <p>由于centos系统过于老旧，又不知道之前下载了什么插件</p>
+        <div class="article-content markdown-body">
+            <p>由于centos系统过于老旧，又不知道之前下载了什么插件</p>
 <p>索性给自己的机器进行了一次系统重装，升级为centos7.0</p>
 <p>写这篇笔记记录一下纯净的centos系统安装bbr和x-ui面板</p>
-<h3 id="安装centos依赖"><a href="#安装centos依赖" class="headerlink" title="安装centos依赖"></a>安装centos依赖</h3><h4 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
-
+<h3 id="安装centos依赖"><a href="#安装centos依赖" class="headerlink" title="安装centos依赖"></a>安装centos依赖</h3><h4 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h4><pre><code>yum -y update
+</code></pre>
 <p>由于我们主要是安装x-ui不需要安装什么插件啥的</p>
-<h3 id="安装x-ui面板"><a href="#安装x-ui面板" class="headerlink" title="安装x-ui面板"></a>安装x-ui面板</h3><h4 id="安装一键脚本"><a href="#安装一键脚本" class="headerlink" title="安装一键脚本"></a>安装一键脚本</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)</span><br></pre></td></tr></table></figure>
-
+<h3 id="安装x-ui面板"><a href="#安装x-ui面板" class="headerlink" title="安装x-ui面板"></a>安装x-ui面板</h3><h4 id="安装一键脚本"><a href="#安装一键脚本" class="headerlink" title="安装一键脚本"></a>安装一键脚本</h4><pre><code>bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+</code></pre>
 <p>准备尝试docker安装，但是比较繁琐，暂时不折腾了</p>
 <h4 id="登陆x-ui面板"><a href="#登陆x-ui面板" class="headerlink" title="登陆x-ui面板"></a>登陆x-ui面板</h4><p>因为x-ui默认是54321端口，直接使用ip+端口54321进行访问</p>
 <h3 id="安装bbr加速"><a href="#安装bbr加速" class="headerlink" title="安装bbr加速"></a>安装bbr加速</h3><p>使用以下的一键脚本进行安装bbr即可</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://gist.github.com/zeruns/a0ec603f20d1b86de6a774a8ba27588f/raw/4f9957ae23f5efb2bb7c57a198ae2cffebfb1c56/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh</span><br></pre></td></tr></table></figure>
-
+<pre><code>wget -N --no-check-certificate &quot;https://gist.github.com/zeruns/a0ec603f20d1b86de6a774a8ba27588f/raw/4f9957ae23f5efb2bb7c57a198ae2cffebfb1c56/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh
+</code></pre>
 <p>首先安装bbr内核和bbr内核魔改版</p>
 <p>然后启用bbr内核的魔改版即可</p>
 <h3 id="安装防火墙"><a href="#安装防火墙" class="headerlink" title="安装防火墙"></a>安装防火墙</h3><p>如果不记得指令，可以使用这个命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=14530/tcp --permanent</span><br></pre></td></tr></table></figure>
-
+<pre><code>firewall-cmd --zone=public --add-port=14530/tcp --permanent
+</code></pre>
 <p>到时候Linux系统会提示没有安装防火墙，根据提示安装防火墙</p>
 <p>安装完成后需要给x-ui面板开放54321端口</p>
 <p>直接执行以下指令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=54321/tcp --permanent</span><br></pre></td></tr></table></figure>
-
+<pre><code>firewall-cmd --zone=public --add-port=54321/tcp --permanent
+</code></pre>
 <p>然后x-ui面板开启了之后需要开放对应端口直接对以上代码进行端口数值修改即可</p>
 <p>防火墙开启但是不会立即生效，需要使用以下命令进行对防火墙端口修改立即生效</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
+<pre><code>firewall-cmd --reload
+</code></pre>
 <p>ok，搞定了</p>
 
-  </div>
-</article>
+        </div>
 
         
+
+        
+            <ul class="post-tags-box">
                 
-                        
+                    <li class="tag-item">
+                        <a href="/tags/x-ui/">#x-ui</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
         
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">首页</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/p/13aa859c.html"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">我的python笔记</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/p/27ad136a.html"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">记录一些常用的docker命令与项目</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
         
-      </ul>
+
+        
     </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85centos%E4%BE%9D%E8%B5%96"><span class="toc-number">1.</span> <span class="toc-text">安装centos依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.</span> <span class="toc-text">更新系统</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85x-ui%E9%9D%A2%E6%9D%BF"><span class="toc-number">2.</span> <span class="toc-text">安装x-ui面板</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC"><span class="toc-number">2.1.</span> <span class="toc-text">安装一键脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BB%E9%99%86x-ui%E9%9D%A2%E6%9D%BF"><span class="toc-number">2.2.</span> <span class="toc-text">登陆x-ui面板</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85bbr%E5%8A%A0%E9%80%9F"><span class="toc-number">3.</span> <span class="toc-text">安装bbr加速</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">4.</span> <span class="toc-text">安装防火墙</span></a></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://moe.vin/p/acd7a6a9.html"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://moe.vin/p/acd7a6a9.html&text=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://moe.vin/p/acd7a6a9.html&title=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://moe.vin/p/acd7a6a9.html&is_video=false&description=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=记录一下Linux安装x-ui和bbr加速&body=Check out this article: https://moe.vin/p/acd7a6a9.html"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://moe.vin/p/acd7a6a9.html&title=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://moe.vin/p/acd7a6a9.html&title=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://moe.vin/p/acd7a6a9.html&title=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://moe.vin/p/acd7a6a9.html&title=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://moe.vin/p/acd7a6a9.html&name=记录一下Linux安装x-ui和bbr加速&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://moe.vin/p/acd7a6a9.html&t=记录一下Linux安装x-ui和bbr加速"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
-    </div>
-
-  </div>
 </div>
 
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">小赵同学</a>
+        </div>
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2019-2022
-    
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">首页</a></li><!--
-     --><!--
-       --><li><a href="/archives/">归档</a></li><!--
-     -->
-      </ul>
-    </nav>
-  </div>
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
 </footer>
 
+        </div>
     </div>
-    <!-- styles -->
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
 
 
 
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
 
-
-    <!-- jquery -->
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
-
-
-
-
-<!-- clipboard -->
-
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
-  
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
-    btn += '<i class="far fa-clone"></i>';
-    btn += '</span>'; 
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "复制成功！");
-      e.clearSelection();
-    })
-  })
-  </script>
-
+<script src="/js/utils.js"></script>
 
 <script src="/js/main.js"></script>
 
-<!-- search -->
+<script src="/js/header-shrink.js"></script>
 
-<!-- Google Analytics -->
+<script src="/js/back2top.js"></script>
 
-<!-- Baidu Analytics -->
+<script src="/js/dark-light-toggle.js"></script>
 
-<!-- Cloudflare Analytics -->
 
-<!-- Umami Analytics -->
 
-<!-- Disqus Comments -->
+    
+<script src="/js/local-search.js"></script>
 
-<!-- utterances Comments -->
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
 
 </body>
 </html>

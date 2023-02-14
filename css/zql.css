@@ -1,0 +1,9 @@
+@media (max-width: 780px) .markdown-body h3 {
+  font-size: 1.5rem;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+.markdown-body p {
+  line-height: 0 !important;
+  color: var(--default-text-color);
+}
