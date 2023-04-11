@@ -6,10 +6,31 @@
   <link href="https://moe.vin/atom.xml" rel="self"/>
   
   <link href="https://moe.vin/"/>
-  <updated>2023-02-14T03:19:31.442Z</updated>
+  <updated>2023-04-11T03:43:27.574Z</updated>
   <id>https://moe.vin/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试一篇文章</title>
+    <link href="https://moe.vin/p/72c8ba12.html"/>
+    <id>https://moe.vin/p/72c8ba12.html</id>
+    <published>2023-04-11T03:43:02.000Z</published>
+    <updated>2023-04-11T03:43:27.574Z</updated>
+    
+    <content type="html"><![CDATA[<p>chuygcwachqe’</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;chuygcwachqe’&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>hexo常用指令</title>

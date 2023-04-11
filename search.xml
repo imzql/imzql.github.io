@@ -566,4 +566,10 @@ apt-get install screen  #Debian或者Ubuntu
         <tag>docker</tag>
       </tags>
   </entry>
+  <entry>
+    <title>测试一篇文章</title>
+    <url>/p/72c8ba12.html</url>
+    <content><![CDATA[<p>chuygcwachqe’</p>
+]]></content>
+  </entry>
 </search>
