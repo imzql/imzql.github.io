@@ -6,10 +6,31 @@
   <link href="https://moe.vin/atom.xml" rel="self"/>
   
   <link href="https://moe.vin/"/>
-  <updated>2023-02-14T03:19:31.442Z</updated>
+  <updated>2023-04-11T15:52:37.815Z</updated>
   <id>https://moe.vin/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何搭建一个网站</title>
+    <link href="https://moe.vin/p/a2bad115.html"/>
+    <id>https://moe.vin/p/a2bad115.html</id>
+    <published>2023-04-11T15:26:25.000Z</published>
+    <updated>2023-04-11T15:52:37.815Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="搞定GitHub"><a href="#搞定GitHub" class="headerlink" title="搞定GitHub"></a>搞定GitHub</h2><p>首先访问 github.com , 登录自己的账号即可</p><p><img src="https://img.usj.cc/i/2023/04/11/64357d34ef5bf.png" alt="image-20230411233051273"></p><p>然后点击绿色按钮 new 创建一个仓库</p><p><img src="https://img.usj.cc/i/2023/04/11/64357d782eae5.png" alt="image-20230411233206828"></p><p>第一个框里写你的本地文件夹名字即可，名字随意</p><p>第二个红框按照图片勾选即可</p><p>第三步直接点那个绿色按钮即可</p><h2 id="把本地项目拉取"><a href="#把本地项目拉取" class="headerlink" title="把本地项目拉取"></a>把本地项目拉取</h2><p>打开你的GitHub desktop 这个软件</p><p><img src="https://img.usj.cc/i/2023/04/11/64357df0d05fb.png" alt="image-20230411233407389"></p><p>你会进入该软件页面的首页，点击刷新按钮</p><p><img src="https://img.usj.cc/i/2023/04/11/64357e341fb40.png" alt="image-20230411233513860"></p><p>直接点击软件的第一个刷新按钮 即可出现第一步仓库出现的代码库</p><p>第二个框选中你的库即可</p><p>第三步直接点击clone即可</p><p><img src="https://img.usj.cc/i/2023/04/11/64357e7ae6913.png" alt="image-20230411233625099"></p><p>这里选择你的项目库放在本地电脑的哪个文件夹</p><p>最后点clone即可</p><h2 id="把你的源码放到本地文件夹"><a href="#把你的源码放到本地文件夹" class="headerlink" title="把你的源码放到本地文件夹"></a>把你的源码放到本地文件夹</h2><p>在上一步 把文件clone在电脑本地 直接把对应的文件解压到本地目录</p><p><img src="https://img.usj.cc/i/2023/04/11/64357ee9e0ee2.png" alt="image-20230411233816155"></p><p>对应你的仓库名，把源码解压到文件夹里面即可</p><p>最后继续来到GitHub desktop 里面，push你的代码</p><p><img src="https://img.usj.cc/i/2023/04/11/64357f6b57ad3.png" alt="image-20230411234025450"></p><p>这里写你的备注 可以随便乱写，然后点击下面的蓝色按钮即可</p><p><img src="https://img.usj.cc/i/2023/04/11/64357f9b6b80c.png" alt="image-20230411234113439"></p><p>点击蓝色的push按钮即可</p><h2 id="在vercel官网运行你的项目"><a href="#在vercel官网运行你的项目" class="headerlink" title="在vercel官网运行你的项目"></a>在vercel官网运行你的项目</h2><p><a class="link"   href="https://vercel.com/" >https://vercel.com<i class="fas fa-external-link-alt"></i></a></p><p>登录你的账号之后</p><p>访问这个网址</p><p><a class="link"   href="https://vercel.com/new" >https://vercel.com/new<i class="fas fa-external-link-alt"></i></a></p><p><img src="https://img.usj.cc/i/2023/04/11/6435800f7d830.png" alt="image-20230411234309353"></p><p>选择你的对应GitHub仓库 然后点击import就可以了</p><p>然后项目会自动部署，其他直接选默认即可 然后点击deploy即可</p><p>等待部署完成</p><p><img src="https://img.usj.cc/i/2023/04/11/64358054b8a1a.png" alt="image-20230411234418814"></p><p>点击项目页面的view domains 添加你想添加的域名</p><p><img src="https://img.usj.cc/i/2023/04/11/64358085d38f9.png" alt="image-20230411234508262"></p><p>这里添加你的域名即可 </p><p>如果是 二级域名就直接写 xxx.yourdomain.com</p><p>如果是一级域名直接写 yourdomain.com即可</p><p><img src="https://img.usj.cc/i/2023/04/11/643580de4c2a0.png" alt="image-20230411234636653"></p><p>按照这个值打开 dnspod域名解析网站 解析自己的域名</p><p>首先登录自己的账号  在 dnspod.cn里面</p><p><a class="link"   href="https://console.dnspod.cn/dns/list" >https://console.dnspod.cn/dns/list<i class="fas fa-external-link-alt"></i></a></p><p>然后进入上面的这个页面 找到域名</p><p><img src="https://img.usj.cc/i/2023/04/11/6435816d7134c.png" alt="image-20230411234859937"></p><p>然后点左上角的添加记录</p><p><img src="https://img.usj.cc/i/2023/04/11/643581a8a4cb5.png" alt="image-20230411234959103"></p><p>主机记录一般写你的域名的前缀  比如你要搞的页面是</p><p>home.xxx.com</p><p>主机记录你就写 home即可</p><p>记录值直接写 <img src="https://img.usj.cc/i/2023/04/11/643581ed6e7b0.png" alt="image-20230411234636653"></p><p>这个图片的value即可 把它填进去即可</p><p>这样解析就搞定了</p><h2 id="关于更改源码"><a href="#关于更改源码" class="headerlink" title="关于更改源码"></a>关于更改源码</h2><p>每次修改源码直接在本地修改好 </p><p>去GitHub desktop 里 按照上方操作 重新push一下即可</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;搞定GitHub&quot;&gt;&lt;a href=&quot;#搞定GitHub&quot; class=&quot;headerlink&quot; title=&quot;搞定GitHub&quot;&gt;&lt;/a&gt;搞定GitHub&lt;/h2&gt;&lt;p&gt;首先访问 github.com , 登录自己的账号即可&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;h</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>hexo常用指令</title>
