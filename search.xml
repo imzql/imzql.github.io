@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo常用指令</title>
-    <url>/p/b287a84e.html</url>
-    <content><![CDATA[<p>基本指令</p>
-<p><code>Hexo init</code>初始化博客<br><code>Hexo n 标题</code> 创建一篇文章<br><code>Hexo clean</code> 清理文件<br><code>Hexo g</code> 生成静态文件<br><code>Hexo d</code> 部署博客<br><code>hexo server</code>启动本地服务<br><code>hexo render</code>渲染文件</p>
-<p>一键本地预览</p>
-<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s
-</code></pre>
-<p>一键推送到github</p>
-<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
-</code></pre>
-]]></content>
-  </entry>
-  <entry>
     <title>hexo推送报错解决方法</title>
     <url>/p/3dfe0e1e.html</url>
     <content><![CDATA[<p>好久不更新hexo博客，今天发现一个问题，发现</p>
@@ -45,43 +32,17 @@ git config --global core.autocrlf false
 ]]></content>
   </entry>
   <entry>
-    <title>hexo解决图片本地化的问题</title>
-    <url>/p/49292a36.html</url>
-    <content><![CDATA[<p>仔细看了很多hexo的博客，基本上都是纯文字的博客</p>
-<p>长篇大论的文字，会产生一定的视觉疲劳</p>
-<p>写文章要图文并茂，这样自己看也舒服，读者也舒服</p>
-<p>typroa是一个可以沉浸式写作的好用的软件，软件本身也自带了很多功能</p>
-<p>市面上也有很多速度很快的图床，但是数据放在别人那里，总还是感觉不太靠谱</p>
-<p>我在想，有没有一种方法，可以使自己的hexo文章的图片本地化呢</p>
-<p>下午找了很久，问了很多大佬，简单记录一下实现的思路</p>
-<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>去自己本地的博客文件夹git bash 一下，安装上传插件</p>
-<pre><code>npm install hexo-renderer-marked --save
+    <title>hexo常用指令</title>
+    <url>/p/b287a84e.html</url>
+    <content><![CDATA[<p>基本指令</p>
+<p><code>Hexo init</code>初始化博客<br><code>Hexo n 标题</code> 创建一篇文章<br><code>Hexo clean</code> 清理文件<br><code>Hexo g</code> 生成静态文件<br><code>Hexo d</code> 部署博客<br><code>hexo server</code>启动本地服务<br><code>hexo render</code>渲染文件</p>
+<p>一键本地预览</p>
+<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s
 </code></pre>
-<p>再修改一下自己的hexo博客的配置文件_config.yml，加入下面的配置</p>
-<pre><code>marked:
-  prependRoot: true
-  postAsset: true
+<p>一键推送到github</p>
+<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
 </code></pre>
-<p>在自己的hexo博客的文件夹里的source”下新建”imags”文件夹</p>
-<p>在这里，需要注意”imags”与”_posts”同级，否则会出错</p>
-<p>在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p>
-<pre><code>../../source/images//$&#123;filename&#125;
-</code></pre>
-<p>可以参考一下下面的图片</p>
-<p><img src="../images/hexo%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E6%9C%AC%E5%9C%B0%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/1.png" alt="1"></p>
-<p>在typroa的菜单里面找到格式</p>
-<p>在”格式-&gt;图像-&gt;设置图片根目录“将”你的hexo博客文件夹-&gt;source”设置为根目录</p>
-<p>这样就实现了图片本地化，即使换电脑，也可以备份迁移了</p>
-<h3 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h3><p>顺便提醒一下我遇到的问题，有时候图片会显示上传失败，大概率是图片的文件名过长</p>
-<p>建议把图片的文件名重命名为数字再上传，可以解决这个问题</p>
-<p class="note note-success">感谢您的阅读</p>
 ]]></content>
-      <categories>
-        <category>思路</category>
-      </categories>
-      <tags>
-        <tag>图片本地</tag>
-      </tags>
   </entry>
   <entry>
     <title>hexo的备份以及数据恢复</title>
@@ -277,99 +238,43 @@ git config --global core.autocrlf false
       </tags>
   </entry>
   <entry>
-    <title>如何搭建一个网站</title>
-    <url>/p/a2bad115.html</url>
-    <content><![CDATA[<h2 id="搞定GitHub"><a href="#搞定GitHub" class="headerlink" title="搞定GitHub"></a>搞定GitHub</h2><p>首先访问 github.com , 登录自己的账号即可</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357d34ef5bf.png" alt="image-20230411233051273"></p>
-<p>然后点击绿色按钮 new 创建一个仓库</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357d782eae5.png" alt="image-20230411233206828"></p>
-<p>第一个框里写你的本地文件夹名字即可，名字随意</p>
-<p>第二个红框按照图片勾选即可</p>
-<p>第三步直接点那个绿色按钮即可</p>
-<h2 id="把本地项目拉取"><a href="#把本地项目拉取" class="headerlink" title="把本地项目拉取"></a>把本地项目拉取</h2><p>打开你的GitHub desktop 这个软件</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357df0d05fb.png" alt="image-20230411233407389"></p>
-<p>你会进入该软件页面的首页，点击刷新按钮</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357e341fb40.png" alt="image-20230411233513860"></p>
-<p>直接点击软件的第一个刷新按钮 即可出现第一步仓库出现的代码库</p>
-<p>第二个框选中你的库即可</p>
-<p>第三步直接点击clone即可</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357e7ae6913.png" alt="image-20230411233625099"></p>
-<p>这里选择你的项目库放在本地电脑的哪个文件夹</p>
-<p>最后点clone即可</p>
-<h2 id="把你的源码放到本地文件夹"><a href="#把你的源码放到本地文件夹" class="headerlink" title="把你的源码放到本地文件夹"></a>把你的源码放到本地文件夹</h2><p>在上一步 把文件clone在电脑本地 直接把对应的文件解压到本地目录</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357ee9e0ee2.png" alt="image-20230411233816155"></p>
-<p>对应你的仓库名，把源码解压到文件夹里面即可</p>
-<p>最后继续来到GitHub desktop 里面，push你的代码</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357f6b57ad3.png" alt="image-20230411234025450"></p>
-<p>这里写你的备注 可以随便乱写，然后点击下面的蓝色按钮即可</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357f9b6b80c.png" alt="image-20230411234113439"></p>
-<p>点击蓝色的push按钮即可</p>
-<h2 id="在vercel官网运行你的项目"><a href="#在vercel官网运行你的项目" class="headerlink" title="在vercel官网运行你的项目"></a>在vercel官网运行你的项目</h2><p><a href="https://vercel.com/">https://vercel.com</a></p>
-<p>登录你的账号之后</p>
-<p>访问这个网址</p>
-<p><a href="https://vercel.com/new">https://vercel.com/new</a></p>
-<p><img src="https://img.usj.cc/i/2023/04/11/6435800f7d830.png" alt="image-20230411234309353"></p>
-<p>选择你的对应GitHub仓库 然后点击import就可以了</p>
-<p>然后项目会自动部署，其他直接选默认即可 然后点击deploy即可</p>
-<p>等待部署完成</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64358054b8a1a.png" alt="image-20230411234418814"></p>
-<p>点击项目页面的view domains 添加你想添加的域名</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64358085d38f9.png" alt="image-20230411234508262"></p>
-<p>这里添加你的域名即可 </p>
-<p>如果是 二级域名就直接写 xxx.yourdomain.com</p>
-<p>如果是一级域名直接写 yourdomain.com即可</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/643580de4c2a0.png" alt="image-20230411234636653"></p>
-<p>按照这个值打开 dnspod域名解析网站 解析自己的域名</p>
-<p>首先登录自己的账号  在 dnspod.cn里面</p>
-<p><a href="https://console.dnspod.cn/dns/list">https://console.dnspod.cn/dns/list</a></p>
-<p>然后进入上面的这个页面 找到域名</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/6435816d7134c.png" alt="image-20230411234859937"></p>
-<p>然后点左上角的添加记录</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/643581a8a4cb5.png" alt="image-20230411234959103"></p>
-<p>主机记录一般写你的域名的前缀  比如你要搞的页面是</p>
-<p>home.xxx.com</p>
-<p>主机记录你就写 home即可</p>
-<p>记录值直接写 <img src="https://img.usj.cc/i/2023/04/11/643581ed6e7b0.png" alt="image-20230411234636653"></p>
-<p>这个图片的value即可 把它填进去即可</p>
-<p>这样解析就搞定了</p>
-<h2 id="关于更改源码"><a href="#关于更改源码" class="headerlink" title="关于更改源码"></a>关于更改源码</h2><p>每次修改源码直接在本地修改好 </p>
-<p>去GitHub desktop 里 按照上方操作 重新push一下即可</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>我的python笔记</title>
-    <url>/p/13aa859c.html</url>
-    <content><![CDATA[<h2 id="python笔记总结"><a href="#python笔记总结" class="headerlink" title="python笔记总结"></a>python笔记总结</h2><h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>and or not</p>
-<p>相对比c语言，语法有一些不同，&amp;&amp;(且)，||(或)，!(非)；</p>
-<p>逻辑运算符语法</p>
-<p>and 一假则假，指的是两个需要bool值为true才返回true</p>
-<p>or  一真则真，指的是任意一个条件，bool值为true，就返回true</p>
-<p>not 遇真则假，遇假则真，遇到true返回false，遇到false返回true</p>
+    <title>hexo解决图片本地化的问题</title>
+    <url>/p/49292a36.html</url>
+    <content><![CDATA[<p>仔细看了很多hexo的博客，基本上都是纯文字的博客</p>
+<p>长篇大论的文字，会产生一定的视觉疲劳</p>
+<p>写文章要图文并茂，这样自己看也舒服，读者也舒服</p>
+<p>typroa是一个可以沉浸式写作的好用的软件，软件本身也自带了很多功能</p>
+<p>市面上也有很多速度很快的图床，但是数据放在别人那里，总还是感觉不太靠谱</p>
+<p>我在想，有没有一种方法，可以使自己的hexo文章的图片本地化呢</p>
+<p>下午找了很久，问了很多大佬，简单记录一下实现的思路</p>
+<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>去自己本地的博客文件夹git bash 一下，安装上传插件</p>
+<pre><code>npm install hexo-renderer-marked --save
+</code></pre>
+<p>再修改一下自己的hexo博客的配置文件_config.yml，加入下面的配置</p>
+<pre><code>marked:
+  prependRoot: true
+  postAsset: true
+</code></pre>
+<p>在自己的hexo博客的文件夹里的source”下新建”imags”文件夹</p>
+<p>在这里，需要注意”imags”与”_posts”同级，否则会出错</p>
+<p>在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p>
+<pre><code>../../source/images//$&#123;filename&#125;
+</code></pre>
+<p>可以参考一下下面的图片</p>
+<p><img src="../images/hexo%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E6%9C%AC%E5%9C%B0%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/1.png" alt="1"></p>
+<p>在typroa的菜单里面找到格式</p>
+<p>在”格式-&gt;图像-&gt;设置图片根目录“将”你的hexo博客文件夹-&gt;source”设置为根目录</p>
+<p>这样就实现了图片本地化，即使换电脑，也可以备份迁移了</p>
+<h3 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h3><p>顺便提醒一下我遇到的问题，有时候图片会显示上传失败，大概率是图片的文件名过长</p>
+<p>建议把图片的文件名重命名为数字再上传，可以解决这个问题</p>
+<p class="note note-success">感谢您的阅读</p>
 ]]></content>
       <categories>
-        <category>python笔记</category>
+        <category>思路</category>
       </categories>
       <tags>
-        <tag>python笔记</tag>
+        <tag>图片本地</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>新机装npm报错解决方法</title>
-    <url>/p/c61767a5.html</url>
-    <content><![CDATA[<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>以管理员身份打开windos Powershell 并键入以下命令</p>
-<pre><code class="powershell">Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
-
-npm install --global --production npm-windows-upgrade
-
-npm-windows-upgrade --npm-version latest
-</code></pre>
-<p>使用淘宝镜像 cnpm</p>
-<pre><code class="powershell">npm install cnpm -g
-
-npm install cnpm -g --registry=https://registry.npm.taobao.org
-</code></pre>
-<p>解决了</p>
-]]></content>
   </entry>
   <entry>
     <title>文章自定义字段和主题设置字段</title>
@@ -484,6 +389,83 @@ npm install cnpm -g --registry=https://registry.npm.taobao.org
 ]]></content>
   </entry>
   <entry>
+    <title>如何搭建一个网站</title>
+    <url>/p/a2bad115.html</url>
+    <content><![CDATA[<h2 id="搞定GitHub"><a href="#搞定GitHub" class="headerlink" title="搞定GitHub"></a>搞定GitHub</h2><p>首先访问 github.com , 登录自己的账号即可</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357d34ef5bf.png" alt="image-20230411233051273"></p>
+<p>然后点击绿色按钮 new 创建一个仓库</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357d782eae5.png" alt="image-20230411233206828"></p>
+<p>第一个框里写你的本地文件夹名字即可，名字随意</p>
+<p>第二个红框按照图片勾选即可</p>
+<p>第三步直接点那个绿色按钮即可</p>
+<h2 id="把本地项目拉取"><a href="#把本地项目拉取" class="headerlink" title="把本地项目拉取"></a>把本地项目拉取</h2><p>打开你的GitHub desktop 这个软件</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357df0d05fb.png" alt="image-20230411233407389"></p>
+<p>你会进入该软件页面的首页，点击刷新按钮</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357e341fb40.png" alt="image-20230411233513860"></p>
+<p>直接点击软件的第一个刷新按钮 即可出现第一步仓库出现的代码库</p>
+<p>第二个框选中你的库即可</p>
+<p>第三步直接点击clone即可</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357e7ae6913.png" alt="image-20230411233625099"></p>
+<p>这里选择你的项目库放在本地电脑的哪个文件夹</p>
+<p>最后点clone即可</p>
+<h2 id="把你的源码放到本地文件夹"><a href="#把你的源码放到本地文件夹" class="headerlink" title="把你的源码放到本地文件夹"></a>把你的源码放到本地文件夹</h2><p>在上一步 把文件clone在电脑本地 直接把对应的文件解压到本地目录</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357ee9e0ee2.png" alt="image-20230411233816155"></p>
+<p>对应你的仓库名，把源码解压到文件夹里面即可</p>
+<p>最后继续来到GitHub desktop 里面，push你的代码</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357f6b57ad3.png" alt="image-20230411234025450"></p>
+<p>这里写你的备注 可以随便乱写，然后点击下面的蓝色按钮即可</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357f9b6b80c.png" alt="image-20230411234113439"></p>
+<p>点击蓝色的push按钮即可</p>
+<h2 id="在vercel官网运行你的项目"><a href="#在vercel官网运行你的项目" class="headerlink" title="在vercel官网运行你的项目"></a>在vercel官网运行你的项目</h2><p><a href="https://vercel.com/">https://vercel.com</a></p>
+<p>登录你的账号之后</p>
+<p>访问这个网址</p>
+<p><a href="https://vercel.com/new">https://vercel.com/new</a></p>
+<p><img src="https://img.usj.cc/i/2023/04/11/6435800f7d830.png" alt="image-20230411234309353"></p>
+<p>选择你的对应GitHub仓库 然后点击import就可以了</p>
+<p>然后项目会自动部署，其他直接选默认即可 然后点击deploy即可</p>
+<p>等待部署完成</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64358054b8a1a.png" alt="image-20230411234418814"></p>
+<p>点击项目页面的view domains 添加你想添加的域名</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64358085d38f9.png" alt="image-20230411234508262"></p>
+<p>这里添加你的域名即可 </p>
+<p>如果是 二级域名就直接写 xxx.yourdomain.com</p>
+<p>如果是一级域名直接写 yourdomain.com即可</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/643580de4c2a0.png" alt="image-20230411234636653"></p>
+<p>按照这个值打开 dnspod域名解析网站 解析自己的域名</p>
+<p>首先登录自己的账号  在 dnspod.cn里面</p>
+<p><a href="https://console.dnspod.cn/dns/list">https://console.dnspod.cn/dns/list</a></p>
+<p>然后进入上面的这个页面 找到域名</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/6435816d7134c.png" alt="image-20230411234859937"></p>
+<p>然后点左上角的添加记录</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/643581a8a4cb5.png" alt="image-20230411234959103"></p>
+<p>主机记录一般写你的域名的前缀  比如你要搞的页面是</p>
+<p>home.xxx.com</p>
+<p>主机记录你就写 home即可</p>
+<p>记录值直接写 <img src="https://img.usj.cc/i/2023/04/11/643581ed6e7b0.png" alt="image-20230411234636653"></p>
+<p>这个图片的value即可 把它填进去即可</p>
+<p>这样解析就搞定了</p>
+<h2 id="关于更改源码"><a href="#关于更改源码" class="headerlink" title="关于更改源码"></a>关于更改源码</h2><p>每次修改源码直接在本地修改好 </p>
+<p>去GitHub desktop 里 按照上方操作 重新push一下即可</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>我的python笔记</title>
+    <url>/p/13aa859c.html</url>
+    <content><![CDATA[<h2 id="python笔记总结"><a href="#python笔记总结" class="headerlink" title="python笔记总结"></a>python笔记总结</h2><h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>and or not</p>
+<p>相对比c语言，语法有一些不同，&amp;&amp;(且)，||(或)，!(非)；</p>
+<p>逻辑运算符语法</p>
+<p>and 一假则假，指的是两个需要bool值为true才返回true</p>
+<p>or  一真则真，指的是任意一个条件，bool值为true，就返回true</p>
+<p>not 遇真则假，遇假则真，遇到true返回false，遇到false返回true</p>
+]]></content>
+      <categories>
+        <category>python笔记</category>
+      </categories>
+      <tags>
+        <tag>python笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>记录一下Linux常用的screen工具命令</title>
     <url>/p/f5bf8885.html</url>
     <content><![CDATA[<p>我们用 <code>VPS</code> 执行一个系统安装，就输入命令然后在那一直等。如果出现掉线或者断网死机的情况，我们还得重新安装。如果能使用上 <code>screen</code> 命令可以实现无人值守的效果。我们可以同时操作多个任务，也可以关机操作。所以说很方便。</p>
@@ -555,25 +537,22 @@ apt-get install screen  #Debian或者Ubuntu
       </tags>
   </entry>
   <entry>
-    <title>记录一些常用的docker命令与项目</title>
-    <url>/p/27ad136a.html</url>
-    <content><![CDATA[<p>最近喜欢上了docker部署，但是有些命令去文档看</p>
-<p>官网老慢了，一些常用的指令记录下来，用来备忘</p>
-<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><h4 id="一键查看正在运行容器"><a href="#一键查看正在运行容器" class="headerlink" title="一键查看正在运行容器"></a>一键查看正在运行容器</h4><pre><code>docker ps
+    <title>新机装npm报错解决方法</title>
+    <url>/p/c61767a5.html</url>
+    <content><![CDATA[<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>以管理员身份打开windos Powershell 并键入以下命令</p>
+<pre><code class="powershell">Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+
+npm install --global --production npm-windows-upgrade
+
+npm-windows-upgrade --npm-version latest
 </code></pre>
-<h4 id="设置容器执行服务器开启自启"><a href="#设置容器执行服务器开启自启" class="headerlink" title="设置容器执行服务器开启自启"></a>设置容器执行服务器开启自启</h4><pre><code>sudo docker update 容器的id --restart=always
+<p>使用淘宝镜像 cnpm</p>
+<pre><code class="powershell">npm install cnpm -g
+
+npm install cnpm -g --registry=https://registry.npm.taobao.org
 </code></pre>
-<h3 id="优秀的docker项目"><a href="#优秀的docker项目" class="headerlink" title="优秀的docker项目"></a>优秀的docker项目</h3><h4 id="rsshub"><a href="#rsshub" class="headerlink" title="rsshub"></a>rsshub</h4><h5 id="首先拉取镜像"><a href="#首先拉取镜像" class="headerlink" title="首先拉取镜像"></a>首先拉取镜像</h5><pre><code>docker pull diygod/rsshub
-</code></pre>
-<h5 id="部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙"><a href="#部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙" class="headerlink" title="部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙"></a>部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙</h5><pre><code>docker run -d --name rsshub -p 1200:1200 diygod/rsshub
-</code></pre>
-<h5 id="进行宝塔的域名反代，即可"><a href="#进行宝塔的域名反代，即可" class="headerlink" title="进行宝塔的域名反代，即可"></a>进行宝塔的域名反代，即可</h5>]]></content>
-      <categories>
-        <category>docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
+<p>解决了</p>
+]]></content>
   </entry>
   <entry>
     <title>记录一下部署hellohao图床的坑</title>
@@ -624,6 +603,27 @@ apt-get install screen  #Debian或者Ubuntu
       </categories>
       <tags>
         <tag>hellohao图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录一些常用的docker命令与项目</title>
+    <url>/p/27ad136a.html</url>
+    <content><![CDATA[<p>最近喜欢上了docker部署，但是有些命令去文档看</p>
+<p>官网老慢了，一些常用的指令记录下来，用来备忘</p>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><h4 id="一键查看正在运行容器"><a href="#一键查看正在运行容器" class="headerlink" title="一键查看正在运行容器"></a>一键查看正在运行容器</h4><pre><code>docker ps
+</code></pre>
+<h4 id="设置容器执行服务器开启自启"><a href="#设置容器执行服务器开启自启" class="headerlink" title="设置容器执行服务器开启自启"></a>设置容器执行服务器开启自启</h4><pre><code>sudo docker update 容器的id --restart=always
+</code></pre>
+<h3 id="优秀的docker项目"><a href="#优秀的docker项目" class="headerlink" title="优秀的docker项目"></a>优秀的docker项目</h3><h4 id="rsshub"><a href="#rsshub" class="headerlink" title="rsshub"></a>rsshub</h4><h5 id="首先拉取镜像"><a href="#首先拉取镜像" class="headerlink" title="首先拉取镜像"></a>首先拉取镜像</h5><pre><code>docker pull diygod/rsshub
+</code></pre>
+<h5 id="部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙"><a href="#部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙" class="headerlink" title="部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙"></a>部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙</h5><pre><code>docker run -d --name rsshub -p 1200:1200 diygod/rsshub
+</code></pre>
+<h5 id="进行宝塔的域名反代，即可"><a href="#进行宝塔的域名反代，即可" class="headerlink" title="进行宝塔的域名反代，即可"></a>进行宝塔的域名反代，即可</h5>]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
 </search>
