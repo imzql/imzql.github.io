@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo常用指令</title>
-    <url>/p/b287a84e.html</url>
-    <content><![CDATA[<p>基本指令</p>
-<p><code>Hexo init</code>初始化博客<br><code>Hexo n 标题</code> 创建一篇文章<br><code>Hexo clean</code> 清理文件<br><code>Hexo g</code> 生成静态文件<br><code>Hexo d</code> 部署博客<br><code>hexo server</code>启动本地服务<br><code>hexo render</code>渲染文件</p>
-<p>一键本地预览</p>
-<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s
-</code></pre>
-<p>一键推送到github</p>
-<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
-</code></pre>
-]]></content>
-  </entry>
-  <entry>
     <title>hexo推送报错解决方法</title>
     <url>/p/3dfe0e1e.html</url>
     <content><![CDATA[<p>好久不更新hexo博客，今天发现一个问题，发现</p>
@@ -40,6 +27,19 @@ rm -rf .deploy_git/
 git config --global core.autocrlf false
 </code></pre>
 <p>最后将文章推送到github即可，发现还是蛮简单就可以解决的</p>
+<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo常用指令</title>
+    <url>/p/b287a84e.html</url>
+    <content><![CDATA[<p>基本指令</p>
+<p><code>Hexo init</code>初始化博客<br><code>Hexo n 标题</code> 创建一篇文章<br><code>Hexo clean</code> 清理文件<br><code>Hexo g</code> 生成静态文件<br><code>Hexo d</code> 部署博客<br><code>hexo server</code>启动本地服务<br><code>hexo render</code>渲染文件</p>
+<p>一键本地预览</p>
+<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s
+</code></pre>
+<p>一键推送到github</p>
 <pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
 </code></pre>
 ]]></content>
@@ -337,6 +337,24 @@ git config --global core.autocrlf false
       </tags>
   </entry>
   <entry>
+    <title>新机装npm报错解决方法</title>
+    <url>/p/c61767a5.html</url>
+    <content><![CDATA[<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>以管理员身份打开windos Powershell 并键入以下命令</p>
+<pre><code class="powershell">Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+
+npm install --global --production npm-windows-upgrade
+
+npm-windows-upgrade --npm-version latest
+</code></pre>
+<p>使用淘宝镜像 cnpm</p>
+<pre><code class="powershell">npm install cnpm -g
+
+npm install cnpm -g --registry=https://registry.npm.taobao.org
+</code></pre>
+<p>解决了</p>
+]]></content>
+  </entry>
+  <entry>
     <title>我的python笔记</title>
     <url>/p/13aa859c.html</url>
     <content><![CDATA[<h2 id="python笔记总结"><a href="#python笔记总结" class="headerlink" title="python笔记总结"></a>python笔记总结</h2><h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>and or not</p>
@@ -505,56 +523,6 @@ git config --global core.autocrlf false
       </tags>
   </entry>
   <entry>
-    <title>新机装npm报错解决方法</title>
-    <url>/p/c61767a5.html</url>
-    <content><![CDATA[<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>以管理员身份打开windos Powershell 并键入以下命令</p>
-<pre><code class="powershell">Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
-
-npm install --global --production npm-windows-upgrade
-
-npm-windows-upgrade --npm-version latest
-</code></pre>
-<p>使用淘宝镜像 cnpm</p>
-<pre><code class="powershell">npm install cnpm -g
-
-npm install cnpm -g --registry=https://registry.npm.taobao.org
-</code></pre>
-<p>解决了</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>记录一下Linux常用的screen工具命令</title>
-    <url>/p/f5bf8885.html</url>
-    <content><![CDATA[<p>我们用 <code>VPS</code> 执行一个系统安装，就输入命令然后在那一直等。如果出现掉线或者断网死机的情况，我们还得重新安装。如果能使用上 <code>screen</code> 命令可以实现无人值守的效果。我们可以同时操作多个任务，也可以关机操作。所以说很方便。</p>
-<h4 id="安装与使用"><a href="#安装与使用" class="headerlink" title="安装与使用"></a>安装与使用</h4><h5 id="1、安装方法："><a href="#1、安装方法：" class="headerlink" title="1、安装方法："></a><strong>1、安装方法：</strong></h5><pre><code>yum install screen  #CentOS
-apt-get install screen  #Debian或者Ubuntu
-</code></pre>
-<h5 id="2、创建一个-screen-会话："><a href="#2、创建一个-screen-会话：" class="headerlink" title="2、创建一个 screen 会话："></a><strong>2、创建一个 screen 会话：</strong></h5><pre><code>screen -S xx  #xx为创建会话的名称
-</code></pre>
-<h5 id="3、隐藏并保留当前会话窗口："><a href="#3、隐藏并保留当前会话窗口：" class="headerlink" title="3、隐藏并保留当前会话窗口："></a><strong>3、隐藏并保留当前会话窗口：</strong></h5><pre><code>按Ctrl+A，再按&quot;D&quot;键
-</code></pre>
-<p>如果怕中途掉线或者要离开的话，可以使用。</p>
-<h5 id="4、恢复会话窗口："><a href="#4、恢复会话窗口：" class="headerlink" title="4、恢复会话窗口："></a><strong>4、恢复会话窗口：</strong></h5><pre><code>screen -r xx #恢复名字为xx的会话
-</code></pre>
-<p>如果在恢复会话的时候忘记了或者没有设定会话名称我们就要执行：</p>
-<pre><code>screen -ls
-</code></pre>
-<p>他会列出你所有的会话列表，然后使用</p>
-<pre><code>screen -r 会话名称
-</code></pre>
-<p>来恢复会话窗口。</p>
-<h5 id="5、关闭会话窗口："><a href="#5、关闭会话窗口：" class="headerlink" title="5、关闭会话窗口："></a><strong>5、关闭会话窗口：</strong></h5><pre><code>exit
-</code></pre>
-<p><code>screen</code> 的好处就是不会因为远程的操作因网络问题中断掉。</p>
-]]></content>
-      <categories>
-        <category>screen指令</category>
-      </categories>
-      <tags>
-        <tag>screen</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记录一下部署hellohao图床的坑</title>
     <url>/p/3d4fc856.html</url>
     <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>考虑到图片存储问题，还是不建议图片存在一些市面上免费的图床</p>
@@ -603,6 +571,38 @@ apt-get install screen  #Debian或者Ubuntu
       </categories>
       <tags>
         <tag>hellohao图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录一下Linux常用的screen工具命令</title>
+    <url>/p/f5bf8885.html</url>
+    <content><![CDATA[<p>我们用 <code>VPS</code> 执行一个系统安装，就输入命令然后在那一直等。如果出现掉线或者断网死机的情况，我们还得重新安装。如果能使用上 <code>screen</code> 命令可以实现无人值守的效果。我们可以同时操作多个任务，也可以关机操作。所以说很方便。</p>
+<h4 id="安装与使用"><a href="#安装与使用" class="headerlink" title="安装与使用"></a>安装与使用</h4><h5 id="1、安装方法："><a href="#1、安装方法：" class="headerlink" title="1、安装方法："></a><strong>1、安装方法：</strong></h5><pre><code>yum install screen  #CentOS
+apt-get install screen  #Debian或者Ubuntu
+</code></pre>
+<h5 id="2、创建一个-screen-会话："><a href="#2、创建一个-screen-会话：" class="headerlink" title="2、创建一个 screen 会话："></a><strong>2、创建一个 screen 会话：</strong></h5><pre><code>screen -S xx  #xx为创建会话的名称
+</code></pre>
+<h5 id="3、隐藏并保留当前会话窗口："><a href="#3、隐藏并保留当前会话窗口：" class="headerlink" title="3、隐藏并保留当前会话窗口："></a><strong>3、隐藏并保留当前会话窗口：</strong></h5><pre><code>按Ctrl+A，再按&quot;D&quot;键
+</code></pre>
+<p>如果怕中途掉线或者要离开的话，可以使用。</p>
+<h5 id="4、恢复会话窗口："><a href="#4、恢复会话窗口：" class="headerlink" title="4、恢复会话窗口："></a><strong>4、恢复会话窗口：</strong></h5><pre><code>screen -r xx #恢复名字为xx的会话
+</code></pre>
+<p>如果在恢复会话的时候忘记了或者没有设定会话名称我们就要执行：</p>
+<pre><code>screen -ls
+</code></pre>
+<p>他会列出你所有的会话列表，然后使用</p>
+<pre><code>screen -r 会话名称
+</code></pre>
+<p>来恢复会话窗口。</p>
+<h5 id="5、关闭会话窗口："><a href="#5、关闭会话窗口：" class="headerlink" title="5、关闭会话窗口："></a><strong>5、关闭会话窗口：</strong></h5><pre><code>exit
+</code></pre>
+<p><code>screen</code> 的好处就是不会因为远程的操作因网络问题中断掉。</p>
+]]></content>
+      <categories>
+        <category>screen指令</category>
+      </categories>
+      <tags>
+        <tag>screen</tag>
       </tags>
   </entry>
   <entry>
