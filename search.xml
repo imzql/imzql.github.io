@@ -152,6 +152,45 @@ git config --global core.autocrlf false
 ]]></content>
   </entry>
   <entry>
+    <title>hexo解决图片本地化的问题</title>
+    <url>/p/49292a36.html</url>
+    <content><![CDATA[<p>仔细看了很多hexo的博客，基本上都是纯文字的博客</p>
+<p>长篇大论的文字，会产生一定的视觉疲劳</p>
+<p>写文章要图文并茂，这样自己看也舒服，读者也舒服</p>
+<p>typroa是一个可以沉浸式写作的好用的软件，软件本身也自带了很多功能</p>
+<p>市面上也有很多速度很快的图床，但是数据放在别人那里，总还是感觉不太靠谱</p>
+<p>我在想，有没有一种方法，可以使自己的hexo文章的图片本地化呢</p>
+<p>下午找了很久，问了很多大佬，简单记录一下实现的思路</p>
+<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>去自己本地的博客文件夹git bash 一下，安装上传插件</p>
+<pre><code>npm install hexo-renderer-marked --save
+</code></pre>
+<p>再修改一下自己的hexo博客的配置文件_config.yml，加入下面的配置</p>
+<pre><code>marked:
+  prependRoot: true
+  postAsset: true
+</code></pre>
+<p>在自己的hexo博客的文件夹里的source”下新建”imags”文件夹</p>
+<p>在这里，需要注意”imags”与”_posts”同级，否则会出错</p>
+<p>在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p>
+<pre><code>../../source/images//$&#123;filename&#125;
+</code></pre>
+<p>可以参考一下下面的图片</p>
+<p><img src="../images/hexo%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E6%9C%AC%E5%9C%B0%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/1.png" alt="1"></p>
+<p>在typroa的菜单里面找到格式</p>
+<p>在”格式-&gt;图像-&gt;设置图片根目录“将”你的hexo博客文件夹-&gt;source”设置为根目录</p>
+<p>这样就实现了图片本地化，即使换电脑，也可以备份迁移了</p>
+<h3 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h3><p>顺便提醒一下我遇到的问题，有时候图片会显示上传失败，大概率是图片的文件名过长</p>
+<p>建议把图片的文件名重命名为数字再上传，可以解决这个问题</p>
+<p class="note note-success">感谢您的阅读</p>
+]]></content>
+      <categories>
+        <category>思路</category>
+      </categories>
+      <tags>
+        <tag>图片本地</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的c语言学习笔记</title>
     <url>/p/306f1f3b.html</url>
     <content><![CDATA[<h1 id="入门阶段-认识C语言"><a href="#入门阶段-认识C语言" class="headerlink" title="入门阶段 认识C语言"></a>入门阶段 认识C语言</h1><h2 id="1-进制的转换"><a href="#1-进制的转换" class="headerlink" title="1.进制的转换"></a>1.进制的转换</h2><p>十进制：有 0 - 9 共十个数字，逢十进一</p>
@@ -298,45 +337,6 @@ git config --global core.autocrlf false
       </tags>
   </entry>
   <entry>
-    <title>hexo解决图片本地化的问题</title>
-    <url>/p/49292a36.html</url>
-    <content><![CDATA[<p>仔细看了很多hexo的博客，基本上都是纯文字的博客</p>
-<p>长篇大论的文字，会产生一定的视觉疲劳</p>
-<p>写文章要图文并茂，这样自己看也舒服，读者也舒服</p>
-<p>typroa是一个可以沉浸式写作的好用的软件，软件本身也自带了很多功能</p>
-<p>市面上也有很多速度很快的图床，但是数据放在别人那里，总还是感觉不太靠谱</p>
-<p>我在想，有没有一种方法，可以使自己的hexo文章的图片本地化呢</p>
-<p>下午找了很久，问了很多大佬，简单记录一下实现的思路</p>
-<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>去自己本地的博客文件夹git bash 一下，安装上传插件</p>
-<pre><code>npm install hexo-renderer-marked --save
-</code></pre>
-<p>再修改一下自己的hexo博客的配置文件_config.yml，加入下面的配置</p>
-<pre><code>marked:
-  prependRoot: true
-  postAsset: true
-</code></pre>
-<p>在自己的hexo博客的文件夹里的source”下新建”imags”文件夹</p>
-<p>在这里，需要注意”imags”与”_posts”同级，否则会出错</p>
-<p>在Typora中“文件-&gt;设置偏好-&gt;图像“。在插入图片时”复制到指定路径“设置为</p>
-<pre><code>../../source/images//$&#123;filename&#125;
-</code></pre>
-<p>可以参考一下下面的图片</p>
-<p><img src="../images/hexo%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E6%9C%AC%E5%9C%B0%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98/1.png" alt="1"></p>
-<p>在typroa的菜单里面找到格式</p>
-<p>在”格式-&gt;图像-&gt;设置图片根目录“将”你的hexo博客文件夹-&gt;source”设置为根目录</p>
-<p>这样就实现了图片本地化，即使换电脑，也可以备份迁移了</p>
-<h3 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h3><p>顺便提醒一下我遇到的问题，有时候图片会显示上传失败，大概率是图片的文件名过长</p>
-<p>建议把图片的文件名重命名为数字再上传，可以解决这个问题</p>
-<p class="note note-success">感谢您的阅读</p>
-]]></content>
-      <categories>
-        <category>思路</category>
-      </categories>
-      <tags>
-        <tag>图片本地</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的python笔记</title>
     <url>/p/13aa859c.html</url>
     <content><![CDATA[<h2 id="python笔记总结"><a href="#python笔记总结" class="headerlink" title="python笔记总结"></a>python笔记总结</h2><h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><p>and or not</p>
@@ -352,6 +352,24 @@ git config --global core.autocrlf false
       <tags>
         <tag>python笔记</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>新机装npm报错解决方法</title>
+    <url>/p/c61767a5.html</url>
+    <content><![CDATA[<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>以管理员身份打开windos Powershell 并键入以下命令</p>
+<pre><code class="powershell">Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+
+npm install --global --production npm-windows-upgrade
+
+npm-windows-upgrade --npm-version latest
+</code></pre>
+<p>使用淘宝镜像 cnpm</p>
+<pre><code class="powershell">npm install cnpm -g
+
+npm install cnpm -g --registry=https://registry.npm.taobao.org
+</code></pre>
+<p>解决了</p>
+]]></content>
   </entry>
   <entry>
     <title>文章自定义字段和主题设置字段</title>
@@ -466,56 +484,6 @@ git config --global core.autocrlf false
 ]]></content>
   </entry>
   <entry>
-    <title>新机装npm报错解决方法</title>
-    <url>/p/c61767a5.html</url>
-    <content><![CDATA[<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>以管理员身份打开windos Powershell 并键入以下命令</p>
-<pre><code class="powershell">Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
-
-npm install --global --production npm-windows-upgrade
-
-npm-windows-upgrade --npm-version latest
-</code></pre>
-<p>使用淘宝镜像 cnpm</p>
-<pre><code class="powershell">npm install cnpm -g
-
-npm install cnpm -g --registry=https://registry.npm.taobao.org
-</code></pre>
-<p>解决了</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>记录一下Linux常用的screen工具命令</title>
-    <url>/p/f5bf8885.html</url>
-    <content><![CDATA[<p>我们用 <code>VPS</code> 执行一个系统安装，就输入命令然后在那一直等。如果出现掉线或者断网死机的情况，我们还得重新安装。如果能使用上 <code>screen</code> 命令可以实现无人值守的效果。我们可以同时操作多个任务，也可以关机操作。所以说很方便。</p>
-<h4 id="安装与使用"><a href="#安装与使用" class="headerlink" title="安装与使用"></a>安装与使用</h4><h5 id="1、安装方法："><a href="#1、安装方法：" class="headerlink" title="1、安装方法："></a><strong>1、安装方法：</strong></h5><pre><code>yum install screen  #CentOS
-apt-get install screen  #Debian或者Ubuntu
-</code></pre>
-<h5 id="2、创建一个-screen-会话："><a href="#2、创建一个-screen-会话：" class="headerlink" title="2、创建一个 screen 会话："></a><strong>2、创建一个 screen 会话：</strong></h5><pre><code>screen -S xx  #xx为创建会话的名称
-</code></pre>
-<h5 id="3、隐藏并保留当前会话窗口："><a href="#3、隐藏并保留当前会话窗口：" class="headerlink" title="3、隐藏并保留当前会话窗口："></a><strong>3、隐藏并保留当前会话窗口：</strong></h5><pre><code>按Ctrl+A，再按&quot;D&quot;键
-</code></pre>
-<p>如果怕中途掉线或者要离开的话，可以使用。</p>
-<h5 id="4、恢复会话窗口："><a href="#4、恢复会话窗口：" class="headerlink" title="4、恢复会话窗口："></a><strong>4、恢复会话窗口：</strong></h5><pre><code>screen -r xx #恢复名字为xx的会话
-</code></pre>
-<p>如果在恢复会话的时候忘记了或者没有设定会话名称我们就要执行：</p>
-<pre><code>screen -ls
-</code></pre>
-<p>他会列出你所有的会话列表，然后使用</p>
-<pre><code>screen -r 会话名称
-</code></pre>
-<p>来恢复会话窗口。</p>
-<h5 id="5、关闭会话窗口："><a href="#5、关闭会话窗口：" class="headerlink" title="5、关闭会话窗口："></a><strong>5、关闭会话窗口：</strong></h5><pre><code>exit
-</code></pre>
-<p><code>screen</code> 的好处就是不会因为远程的操作因网络问题中断掉。</p>
-]]></content>
-      <categories>
-        <category>screen指令</category>
-      </categories>
-      <tags>
-        <tag>screen</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记录一下Linux安装x-ui和bbr加速</title>
     <url>/p/acd7a6a9.html</url>
     <content><![CDATA[<p>由于centos系统过于老旧，又不知道之前下载了什么插件</p>
@@ -555,24 +523,35 @@ apt-get install screen  #Debian或者Ubuntu
       </tags>
   </entry>
   <entry>
-    <title>记录一些常用的docker命令与项目</title>
-    <url>/p/27ad136a.html</url>
-    <content><![CDATA[<p>最近喜欢上了docker部署，但是有些命令去文档看</p>
-<p>官网老慢了，一些常用的指令记录下来，用来备忘</p>
-<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><h4 id="一键查看正在运行容器"><a href="#一键查看正在运行容器" class="headerlink" title="一键查看正在运行容器"></a>一键查看正在运行容器</h4><pre><code>docker ps
+    <title>记录一下Linux常用的screen工具命令</title>
+    <url>/p/f5bf8885.html</url>
+    <content><![CDATA[<p>我们用 <code>VPS</code> 执行一个系统安装，就输入命令然后在那一直等。如果出现掉线或者断网死机的情况，我们还得重新安装。如果能使用上 <code>screen</code> 命令可以实现无人值守的效果。我们可以同时操作多个任务，也可以关机操作。所以说很方便。</p>
+<h4 id="安装与使用"><a href="#安装与使用" class="headerlink" title="安装与使用"></a>安装与使用</h4><h5 id="1、安装方法："><a href="#1、安装方法：" class="headerlink" title="1、安装方法："></a><strong>1、安装方法：</strong></h5><pre><code>yum install screen  #CentOS
+apt-get install screen  #Debian或者Ubuntu
 </code></pre>
-<h4 id="设置容器执行服务器开启自启"><a href="#设置容器执行服务器开启自启" class="headerlink" title="设置容器执行服务器开启自启"></a>设置容器执行服务器开启自启</h4><pre><code>sudo docker update 容器的id --restart=always
+<h5 id="2、创建一个-screen-会话："><a href="#2、创建一个-screen-会话：" class="headerlink" title="2、创建一个 screen 会话："></a><strong>2、创建一个 screen 会话：</strong></h5><pre><code>screen -S xx  #xx为创建会话的名称
 </code></pre>
-<h3 id="优秀的docker项目"><a href="#优秀的docker项目" class="headerlink" title="优秀的docker项目"></a>优秀的docker项目</h3><h4 id="rsshub"><a href="#rsshub" class="headerlink" title="rsshub"></a>rsshub</h4><h5 id="首先拉取镜像"><a href="#首先拉取镜像" class="headerlink" title="首先拉取镜像"></a>首先拉取镜像</h5><pre><code>docker pull diygod/rsshub
+<h5 id="3、隐藏并保留当前会话窗口："><a href="#3、隐藏并保留当前会话窗口：" class="headerlink" title="3、隐藏并保留当前会话窗口："></a><strong>3、隐藏并保留当前会话窗口：</strong></h5><pre><code>按Ctrl+A，再按&quot;D&quot;键
 </code></pre>
-<h5 id="部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙"><a href="#部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙" class="headerlink" title="部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙"></a>部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙</h5><pre><code>docker run -d --name rsshub -p 1200:1200 diygod/rsshub
+<p>如果怕中途掉线或者要离开的话，可以使用。</p>
+<h5 id="4、恢复会话窗口："><a href="#4、恢复会话窗口：" class="headerlink" title="4、恢复会话窗口："></a><strong>4、恢复会话窗口：</strong></h5><pre><code>screen -r xx #恢复名字为xx的会话
 </code></pre>
-<h5 id="进行宝塔的域名反代，即可"><a href="#进行宝塔的域名反代，即可" class="headerlink" title="进行宝塔的域名反代，即可"></a>进行宝塔的域名反代，即可</h5>]]></content>
+<p>如果在恢复会话的时候忘记了或者没有设定会话名称我们就要执行：</p>
+<pre><code>screen -ls
+</code></pre>
+<p>他会列出你所有的会话列表，然后使用</p>
+<pre><code>screen -r 会话名称
+</code></pre>
+<p>来恢复会话窗口。</p>
+<h5 id="5、关闭会话窗口："><a href="#5、关闭会话窗口：" class="headerlink" title="5、关闭会话窗口："></a><strong>5、关闭会话窗口：</strong></h5><pre><code>exit
+</code></pre>
+<p><code>screen</code> 的好处就是不会因为远程的操作因网络问题中断掉。</p>
+]]></content>
       <categories>
-        <category>docker</category>
+        <category>screen指令</category>
       </categories>
       <tags>
-        <tag>docker</tag>
+        <tag>screen</tag>
       </tags>
   </entry>
   <entry>
@@ -624,6 +603,27 @@ apt-get install screen  #Debian或者Ubuntu
       </categories>
       <tags>
         <tag>hellohao图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录一些常用的docker命令与项目</title>
+    <url>/p/27ad136a.html</url>
+    <content><![CDATA[<p>最近喜欢上了docker部署，但是有些命令去文档看</p>
+<p>官网老慢了，一些常用的指令记录下来，用来备忘</p>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><h4 id="一键查看正在运行容器"><a href="#一键查看正在运行容器" class="headerlink" title="一键查看正在运行容器"></a>一键查看正在运行容器</h4><pre><code>docker ps
+</code></pre>
+<h4 id="设置容器执行服务器开启自启"><a href="#设置容器执行服务器开启自启" class="headerlink" title="设置容器执行服务器开启自启"></a>设置容器执行服务器开启自启</h4><pre><code>sudo docker update 容器的id --restart=always
+</code></pre>
+<h3 id="优秀的docker项目"><a href="#优秀的docker项目" class="headerlink" title="优秀的docker项目"></a>优秀的docker项目</h3><h4 id="rsshub"><a href="#rsshub" class="headerlink" title="rsshub"></a>rsshub</h4><h5 id="首先拉取镜像"><a href="#首先拉取镜像" class="headerlink" title="首先拉取镜像"></a>首先拉取镜像</h5><pre><code>docker pull diygod/rsshub
+</code></pre>
+<h5 id="部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙"><a href="#部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙" class="headerlink" title="部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙"></a>部署应用，这里部署在公网ip的1200端口，需要提前开启防火墙</h5><pre><code>docker run -d --name rsshub -p 1200:1200 diygod/rsshub
+</code></pre>
+<h5 id="进行宝塔的域名反代，即可"><a href="#进行宝塔的域名反代，即可" class="headerlink" title="进行宝塔的域名反代，即可"></a>进行宝塔的域名反代，即可</h5>]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
 </search>
