@@ -14,66 +14,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>如何搭建一个网站</title>
-    <url>/p/a2bad115.html</url>
-    <content><![CDATA[<h2 id="搞定GitHub"><a href="#搞定GitHub" class="headerlink" title="搞定GitHub"></a>搞定GitHub</h2><p>首先访问 github.com , 登录自己的账号即可</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357d34ef5bf.png" alt="image-20230411233051273"></p>
-<p>然后点击绿色按钮 new 创建一个仓库</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357d782eae5.png" alt="image-20230411233206828"></p>
-<p>第一个框里写你的本地文件夹名字即可，名字随意</p>
-<p>第二个红框按照图片勾选即可</p>
-<p>第三步直接点那个绿色按钮即可</p>
-<h2 id="把本地项目拉取"><a href="#把本地项目拉取" class="headerlink" title="把本地项目拉取"></a>把本地项目拉取</h2><p>打开你的GitHub desktop 这个软件</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357df0d05fb.png" alt="image-20230411233407389"></p>
-<p>你会进入该软件页面的首页，点击刷新按钮</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357e341fb40.png" alt="image-20230411233513860"></p>
-<p>直接点击软件的第一个刷新按钮 即可出现第一步仓库出现的代码库</p>
-<p>第二个框选中你的库即可</p>
-<p>第三步直接点击clone即可</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357e7ae6913.png" alt="image-20230411233625099"></p>
-<p>这里选择你的项目库放在本地电脑的哪个文件夹</p>
-<p>最后点clone即可</p>
-<h2 id="把你的源码放到本地文件夹"><a href="#把你的源码放到本地文件夹" class="headerlink" title="把你的源码放到本地文件夹"></a>把你的源码放到本地文件夹</h2><p>在上一步 把文件clone在电脑本地 直接把对应的文件解压到本地目录</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357ee9e0ee2.png" alt="image-20230411233816155"></p>
-<p>对应你的仓库名，把源码解压到文件夹里面即可</p>
-<p>最后继续来到GitHub desktop 里面，push你的代码</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357f6b57ad3.png" alt="image-20230411234025450"></p>
-<p>这里写你的备注 可以随便乱写，然后点击下面的蓝色按钮即可</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64357f9b6b80c.png" alt="image-20230411234113439"></p>
-<p>点击蓝色的push按钮即可</p>
-<h2 id="在vercel官网运行你的项目"><a href="#在vercel官网运行你的项目" class="headerlink" title="在vercel官网运行你的项目"></a>在vercel官网运行你的项目</h2><p><a href="https://vercel.com/">https://vercel.com</a></p>
-<p>登录你的账号之后</p>
-<p>访问这个网址</p>
-<p><a href="https://vercel.com/new">https://vercel.com/new</a></p>
-<p><img src="https://img.usj.cc/i/2023/04/11/6435800f7d830.png" alt="image-20230411234309353"></p>
-<p>选择你的对应GitHub仓库 然后点击import就可以了</p>
-<p>然后项目会自动部署，其他直接选默认即可 然后点击deploy即可</p>
-<p>等待部署完成</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64358054b8a1a.png" alt="image-20230411234418814"></p>
-<p>点击项目页面的view domains 添加你想添加的域名</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/64358085d38f9.png" alt="image-20230411234508262"></p>
-<p>这里添加你的域名即可 </p>
-<p>如果是 二级域名就直接写 xxx.yourdomain.com</p>
-<p>如果是一级域名直接写 yourdomain.com即可</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/643580de4c2a0.png" alt="image-20230411234636653"></p>
-<p>按照这个值打开 dnspod域名解析网站 解析自己的域名</p>
-<p>首先登录自己的账号  在 dnspod.cn里面</p>
-<p><a href="https://console.dnspod.cn/dns/list">https://console.dnspod.cn/dns/list</a></p>
-<p>然后进入上面的这个页面 找到域名</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/6435816d7134c.png" alt="image-20230411234859937"></p>
-<p>然后点左上角的添加记录</p>
-<p><img src="https://img.usj.cc/i/2023/04/11/643581a8a4cb5.png" alt="image-20230411234959103"></p>
-<p>主机记录一般写你的域名的前缀  比如你要搞的页面是</p>
-<p>home.xxx.com</p>
-<p>主机记录你就写 home即可</p>
-<p>记录值直接写 <img src="https://img.usj.cc/i/2023/04/11/643581ed6e7b0.png" alt="image-20230411234636653"></p>
-<p>这个图片的value即可 把它填进去即可</p>
-<p>这样解析就搞定了</p>
-<h2 id="关于更改源码"><a href="#关于更改源码" class="headerlink" title="关于更改源码"></a>关于更改源码</h2><p>每次修改源码直接在本地修改好 </p>
-<p>去GitHub desktop 里 按照上方操作 重新push一下即可</p>
-]]></content>
-  </entry>
-  <entry>
     <title>hexo推送报错解决方法</title>
     <url>/p/3dfe0e1e.html</url>
     <content><![CDATA[<p>好久不更新hexo博客，今天发现一个问题，发现</p>
@@ -103,53 +43,6 @@ git config --global core.autocrlf false
 <pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
 </code></pre>
 ]]></content>
-  </entry>
-  <entry>
-    <title>hexo的备份以及数据恢复</title>
-    <url>/p/1dbfa096.html</url>
-    <content><![CDATA[<p>为了防止误操作或计算机崩溃导致的博客源文件丢失</p>
-<p>或满足我们更换电脑进行写作的需求，定期进行备份与恢复就显得很重要了</p>
-<h3 id="开始备份"><a href="#开始备份" class="headerlink" title="开始备份"></a>开始备份</h3><p>我们在进行备份时，并不需要将整个博客目录全部备份，只备份以下几个用户自定义的即可</p>
-<p>scaffolds目录，source目录，themes目录，.gitignore文件，_config.yml文件，package.json文件</p>
-<p>其他都是通用的</p>
-<p>首先我们先来观察整个博客目录的结构：</p>
-<p>(1) .deploy_git 本目录会在我们部署时生成，也就是github上保存的文件，无需备份。</p>
-<p>(2) node_modules 本目录包含了hexo博客依赖的模块，安装时自动生成，无需备份。</p>
-<p>(3) public 与.deploy_git类似，是编译后生成的文件静态网页文件，无需备份。</p>
-<p>(4) scaffolds 保存了用户文章的模板，需要备份。</p>
-<p>(5) source 保存了用户文章的源文件，需要备份。</p>
-<p>(6) themes 保存了用户下载的主题文件与配置，需要备份。</p>
-<p>(7) .gitignore 保存了推送到github时忽略的文件名，需要备份。</p>
-<p>(8) _config.yml 保存了用户配置信息，需要备份。</p>
-<p>(9) db.json 保存了网页的数据文件，在编译生成静态网页时会自动更新，无需备份。</p>
-<p>(10) package.json 保存了依赖的模块列表，需要备份。</p>
-<p>(11) package-lock.json 保存了依赖的模块安装记录，无需备份。</p>
-<h3 id="备份操作"><a href="#备份操作" class="headerlink" title="备份操作"></a>备份操作</h3><p>在了解了需要备份的文件后，就可以进行备份了</p>
-<p>可以手动找到这些文件并将其拷贝出来，或者上传到云端</p>
-<p>例如比较好用的托管平台github，码云，阿里云盘</p>
-<h3 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h3><p>如果电脑上已经安装了hexo博客，由于某些误操作只是想恢复到之前备份的状态的话</p>
-<p>只需要将备份的那六个文件和目录覆盖当前博客相应的文件和目录即可</p>
-<p>如果已经换到新电脑，可以进行如下操作</p>
-<h3 id="安装git-bash和node-js"><a href="#安装git-bash和node-js" class="headerlink" title="安装git bash和node.js"></a>安装git bash和node.js</h3><p>安装后可以在cmd中输入<code>git version</code>，<code>node -v</code>，<code>npm -v</code>查看版本来检测是否成功安装</p>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在cmd中输入<code>npm install -g hexo-cli</code></p>
-<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>在想要保存hexo目录的位置，右键打开git bash here</p>
-<p>执行<code>hexo init</code></p>
-<h3 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h3><p>将备份的六个文件和目录覆盖到当前博客目录，恢复操作完成，可以<code>hexo g</code>，<code>hexo s</code>进行检验</p>
-<p>是不是非常简单</p>
-<h3 id="一键指令"><a href="#一键指令" class="headerlink" title="一键指令"></a>一键指令</h3><p>一键本地预览</p>
-<pre><code>hexo c &amp;&amp; hexo g &amp;&amp; hexo s
-</code></pre>
-<p>一键部署到github pages</p>
-<pre><code>hexo c &amp;&amp; hexo g &amp;&amp; hexo d
-</code></pre>
-<p>感谢您的阅读</p>
-]]></content>
-      <categories>
-        <category>备份</category>
-      </categories>
-      <tags>
-        <tag>数据备份</tag>
-      </tags>
   </entry>
   <entry>
     <title>hexo解决图片本地化的问题</title>
@@ -354,6 +247,113 @@ git config --global core.autocrlf false
       </tags>
   </entry>
   <entry>
+    <title>如何搭建一个网站</title>
+    <url>/p/a2bad115.html</url>
+    <content><![CDATA[<h2 id="搞定GitHub"><a href="#搞定GitHub" class="headerlink" title="搞定GitHub"></a>搞定GitHub</h2><p>首先访问 github.com , 登录自己的账号即可</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357d34ef5bf.png" alt="image-20230411233051273"></p>
+<p>然后点击绿色按钮 new 创建一个仓库</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357d782eae5.png" alt="image-20230411233206828"></p>
+<p>第一个框里写你的本地文件夹名字即可，名字随意</p>
+<p>第二个红框按照图片勾选即可</p>
+<p>第三步直接点那个绿色按钮即可</p>
+<h2 id="把本地项目拉取"><a href="#把本地项目拉取" class="headerlink" title="把本地项目拉取"></a>把本地项目拉取</h2><p>打开你的GitHub desktop 这个软件</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357df0d05fb.png" alt="image-20230411233407389"></p>
+<p>你会进入该软件页面的首页，点击刷新按钮</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357e341fb40.png" alt="image-20230411233513860"></p>
+<p>直接点击软件的第一个刷新按钮 即可出现第一步仓库出现的代码库</p>
+<p>第二个框选中你的库即可</p>
+<p>第三步直接点击clone即可</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357e7ae6913.png" alt="image-20230411233625099"></p>
+<p>这里选择你的项目库放在本地电脑的哪个文件夹</p>
+<p>最后点clone即可</p>
+<h2 id="把你的源码放到本地文件夹"><a href="#把你的源码放到本地文件夹" class="headerlink" title="把你的源码放到本地文件夹"></a>把你的源码放到本地文件夹</h2><p>在上一步 把文件clone在电脑本地 直接把对应的文件解压到本地目录</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357ee9e0ee2.png" alt="image-20230411233816155"></p>
+<p>对应你的仓库名，把源码解压到文件夹里面即可</p>
+<p>最后继续来到GitHub desktop 里面，push你的代码</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357f6b57ad3.png" alt="image-20230411234025450"></p>
+<p>这里写你的备注 可以随便乱写，然后点击下面的蓝色按钮即可</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64357f9b6b80c.png" alt="image-20230411234113439"></p>
+<p>点击蓝色的push按钮即可</p>
+<h2 id="在vercel官网运行你的项目"><a href="#在vercel官网运行你的项目" class="headerlink" title="在vercel官网运行你的项目"></a>在vercel官网运行你的项目</h2><p><a href="https://vercel.com/">https://vercel.com</a></p>
+<p>登录你的账号之后</p>
+<p>访问这个网址</p>
+<p><a href="https://vercel.com/new">https://vercel.com/new</a></p>
+<p><img src="https://img.usj.cc/i/2023/04/11/6435800f7d830.png" alt="image-20230411234309353"></p>
+<p>选择你的对应GitHub仓库 然后点击import就可以了</p>
+<p>然后项目会自动部署，其他直接选默认即可 然后点击deploy即可</p>
+<p>等待部署完成</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64358054b8a1a.png" alt="image-20230411234418814"></p>
+<p>点击项目页面的view domains 添加你想添加的域名</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/64358085d38f9.png" alt="image-20230411234508262"></p>
+<p>这里添加你的域名即可 </p>
+<p>如果是 二级域名就直接写 xxx.yourdomain.com</p>
+<p>如果是一级域名直接写 yourdomain.com即可</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/643580de4c2a0.png" alt="image-20230411234636653"></p>
+<p>按照这个值打开 dnspod域名解析网站 解析自己的域名</p>
+<p>首先登录自己的账号  在 dnspod.cn里面</p>
+<p><a href="https://console.dnspod.cn/dns/list">https://console.dnspod.cn/dns/list</a></p>
+<p>然后进入上面的这个页面 找到域名</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/6435816d7134c.png" alt="image-20230411234859937"></p>
+<p>然后点左上角的添加记录</p>
+<p><img src="https://img.usj.cc/i/2023/04/11/643581a8a4cb5.png" alt="image-20230411234959103"></p>
+<p>主机记录一般写你的域名的前缀  比如你要搞的页面是</p>
+<p>home.xxx.com</p>
+<p>主机记录你就写 home即可</p>
+<p>记录值直接写 <img src="https://img.usj.cc/i/2023/04/11/643581ed6e7b0.png" alt="image-20230411234636653"></p>
+<p>这个图片的value即可 把它填进去即可</p>
+<p>这样解析就搞定了</p>
+<h2 id="关于更改源码"><a href="#关于更改源码" class="headerlink" title="关于更改源码"></a>关于更改源码</h2><p>每次修改源码直接在本地修改好 </p>
+<p>去GitHub desktop 里 按照上方操作 重新push一下即可</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo的备份以及数据恢复</title>
+    <url>/p/1dbfa096.html</url>
+    <content><![CDATA[<p>为了防止误操作或计算机崩溃导致的博客源文件丢失</p>
+<p>或满足我们更换电脑进行写作的需求，定期进行备份与恢复就显得很重要了</p>
+<h3 id="开始备份"><a href="#开始备份" class="headerlink" title="开始备份"></a>开始备份</h3><p>我们在进行备份时，并不需要将整个博客目录全部备份，只备份以下几个用户自定义的即可</p>
+<p>scaffolds目录，source目录，themes目录，.gitignore文件，_config.yml文件，package.json文件</p>
+<p>其他都是通用的</p>
+<p>首先我们先来观察整个博客目录的结构：</p>
+<p>(1) .deploy_git 本目录会在我们部署时生成，也就是github上保存的文件，无需备份。</p>
+<p>(2) node_modules 本目录包含了hexo博客依赖的模块，安装时自动生成，无需备份。</p>
+<p>(3) public 与.deploy_git类似，是编译后生成的文件静态网页文件，无需备份。</p>
+<p>(4) scaffolds 保存了用户文章的模板，需要备份。</p>
+<p>(5) source 保存了用户文章的源文件，需要备份。</p>
+<p>(6) themes 保存了用户下载的主题文件与配置，需要备份。</p>
+<p>(7) .gitignore 保存了推送到github时忽略的文件名，需要备份。</p>
+<p>(8) _config.yml 保存了用户配置信息，需要备份。</p>
+<p>(9) db.json 保存了网页的数据文件，在编译生成静态网页时会自动更新，无需备份。</p>
+<p>(10) package.json 保存了依赖的模块列表，需要备份。</p>
+<p>(11) package-lock.json 保存了依赖的模块安装记录，无需备份。</p>
+<h3 id="备份操作"><a href="#备份操作" class="headerlink" title="备份操作"></a>备份操作</h3><p>在了解了需要备份的文件后，就可以进行备份了</p>
+<p>可以手动找到这些文件并将其拷贝出来，或者上传到云端</p>
+<p>例如比较好用的托管平台github，码云，阿里云盘</p>
+<h3 id="恢复博客"><a href="#恢复博客" class="headerlink" title="恢复博客"></a>恢复博客</h3><p>如果电脑上已经安装了hexo博客，由于某些误操作只是想恢复到之前备份的状态的话</p>
+<p>只需要将备份的那六个文件和目录覆盖当前博客相应的文件和目录即可</p>
+<p>如果已经换到新电脑，可以进行如下操作</p>
+<h3 id="安装git-bash和node-js"><a href="#安装git-bash和node-js" class="headerlink" title="安装git bash和node.js"></a>安装git bash和node.js</h3><p>安装后可以在cmd中输入<code>git version</code>，<code>node -v</code>，<code>npm -v</code>查看版本来检测是否成功安装</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在cmd中输入<code>npm install -g hexo-cli</code></p>
+<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>在想要保存hexo目录的位置，右键打开git bash here</p>
+<p>执行<code>hexo init</code></p>
+<h3 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h3><p>将备份的六个文件和目录覆盖到当前博客目录，恢复操作完成，可以<code>hexo g</code>，<code>hexo s</code>进行检验</p>
+<p>是不是非常简单</p>
+<h3 id="一键指令"><a href="#一键指令" class="headerlink" title="一键指令"></a>一键指令</h3><p>一键本地预览</p>
+<pre><code>hexo c &amp;&amp; hexo g &amp;&amp; hexo s
+</code></pre>
+<p>一键部署到github pages</p>
+<pre><code>hexo c &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre>
+<p>感谢您的阅读</p>
+]]></content>
+      <categories>
+        <category>备份</category>
+      </categories>
+      <tags>
+        <tag>数据备份</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文章自定义字段和主题设置字段</title>
     <url>/p/8fdf37dc.html</url>
     <content><![CDATA[<p>在 Typecho 官方的主题开发文档中，很少有关于文章自定义字段和主题设置相关的开发说明。我也是查看了一些开源主题的代码才搞懂自定义字段和主题设置的开发。这里就简单写一下文章自定义字段和主题设置的定义和调用。</p>
@@ -466,55 +466,22 @@ git config --global core.autocrlf false
 ]]></content>
   </entry>
   <entry>
-    <title>记录一下部署hellohao图床的坑</title>
-    <url>/p/3d4fc856.html</url>
-    <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>考虑到图片存储问题，还是不建议图片存在一些市面上免费的图床</p>
-<p>所以打算搭建一款自己的图床，用于图片的存储，在朋友的了解到，才知道hellohao这个程序很不错</p>
-<p>于是自己入手了hellohao的core版本，也就是付费版本</p>
-<p>因为这个程序属于java开发的web程序，前后端分离，主要是后端提供图片存储服务</p>
-<p>也就是可以把前端，后端，分别部署在两个服务器，这样可以有效的防止前端页面被不法分子攻击</p>
-<p>导致自己的图床程序进入黑洞，这里我讲一下我作为一个新手小白如何搭建Java的这款程序的</p>
-<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><p>由于我自己使用的是debian系统，然后搭配的是宝塔程序</p>
-<p>因为自己对一些linux的命令不太了解，所以一些命令可以基于宝塔面板搭建会比较方便快捷</p>
-<h5 id="安装好Debian"><a href="#安装好Debian" class="headerlink" title="安装好Debian"></a>安装好Debian</h5><p>因为我的服务器在腾讯云，腾讯云已经给了系统镜像</p>
-<h5 id="安装好宝塔面板"><a href="#安装好宝塔面板" class="headerlink" title="安装好宝塔面板"></a>安装好宝塔面板</h5><p>这里访问bt.cn然后copy对应的脚本安装指令即可</p>
-<h5 id="配置java变量"><a href="#配置java变量" class="headerlink" title="配置java变量"></a>配置java变量</h5><h6 id="下载jdk1-8"><a href="#下载jdk1-8" class="headerlink" title="下载jdk1.8"></a>下载jdk1.8</h6><p>这里我已经上传到我的百度网盘，直接下载下来就好了</p>
-<pre><code>链接：https://pan.baidu.com/s/1A1W7Ty91_cDA2YRoluV_bg?pwd=qb9q 
-提取码：qb9q
+    <title>新机装npm报错解决方法</title>
+    <url>/p/c61767a5.html</url>
+    <content><![CDATA[<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>以管理员身份打开windos Powershell 并键入以下命令</p>
+<pre><code class="powershell">Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+
+npm install --global --production npm-windows-upgrade
+
+npm-windows-upgrade --npm-version latest
 </code></pre>
-<p>我们直接进入宝塔面板的文件根目录，然后找到以下地址</p>
-<pre><code>/usr/java
+<p>使用淘宝镜像 cnpm</p>
+<pre><code class="powershell">npm install cnpm -g
+
+npm install cnpm -g --registry=https://registry.npm.taobao.org
 </code></pre>
-<p>如果没有java文件夹请新建一个即可，然后将下载好的jdk文件使用宝塔自带的方法进行解压</p>
-<p>解压好我的jdk文件夹的地址是这样</p>
-<pre><code>/usr/java/jdk1.8.0_181
-</code></pre>
-<h6 id="配置java环境变量"><a href="#配置java环境变量" class="headerlink" title="配置java环境变量"></a>配置java环境变量</h6><p>直接切换到该目录下</p>
-<pre><code>/home/lighthouse
-</code></pre>
-<p>如果没有请新建，然后找到.bashrc文件，然后打开编辑，在文件的最后一行加入以下代码</p>
-<pre><code>export JAVA_HOME=/usr/java/jdk1.8.0_181
-       export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-       export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
-</code></pre>
-<p>这里我们需要刷新一下系统的java环境变量，我们链接好ssh到服务器</p>
-<pre><code>source /home/lighthouse/.bashrc
-</code></pre>
-<p>然后再输入环境是否安装成功</p>
-<pre><code>java -version
-</code></pre>
-<p>输入以上代码即可，然后就可以按照官方的安装文档配置了</p>
-<p>记住这里如果系统返回nofound是指你的环境还没安装好，重新检查一下是那步有问题，再检查一下就好了！</p>
-<p>官方的配置文档</p>
-<pre><code>http://doc.wwery.com/#/internalversion
-</code></pre>
-<h5 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h5>]]></content>
-      <categories>
-        <category>部署hellohao图床</category>
-      </categories>
-      <tags>
-        <tag>hellohao图床</tag>
-      </tags>
+<p>解决了</p>
+]]></content>
   </entry>
   <entry>
     <title>记录一下Linux常用的screen工具命令</title>
@@ -609,21 +576,54 @@ apt-get install screen  #Debian或者Ubuntu
       </tags>
   </entry>
   <entry>
-    <title>新机装npm报错解决方法</title>
-    <url>/p/c61767a5.html</url>
-    <content><![CDATA[<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>以管理员身份打开windos Powershell 并键入以下命令</p>
-<pre><code class="powershell">Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
-
-npm install --global --production npm-windows-upgrade
-
-npm-windows-upgrade --npm-version latest
+    <title>记录一下部署hellohao图床的坑</title>
+    <url>/p/3d4fc856.html</url>
+    <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>考虑到图片存储问题，还是不建议图片存在一些市面上免费的图床</p>
+<p>所以打算搭建一款自己的图床，用于图片的存储，在朋友的了解到，才知道hellohao这个程序很不错</p>
+<p>于是自己入手了hellohao的core版本，也就是付费版本</p>
+<p>因为这个程序属于java开发的web程序，前后端分离，主要是后端提供图片存储服务</p>
+<p>也就是可以把前端，后端，分别部署在两个服务器，这样可以有效的防止前端页面被不法分子攻击</p>
+<p>导致自己的图床程序进入黑洞，这里我讲一下我作为一个新手小白如何搭建Java的这款程序的</p>
+<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><p>由于我自己使用的是debian系统，然后搭配的是宝塔程序</p>
+<p>因为自己对一些linux的命令不太了解，所以一些命令可以基于宝塔面板搭建会比较方便快捷</p>
+<h5 id="安装好Debian"><a href="#安装好Debian" class="headerlink" title="安装好Debian"></a>安装好Debian</h5><p>因为我的服务器在腾讯云，腾讯云已经给了系统镜像</p>
+<h5 id="安装好宝塔面板"><a href="#安装好宝塔面板" class="headerlink" title="安装好宝塔面板"></a>安装好宝塔面板</h5><p>这里访问bt.cn然后copy对应的脚本安装指令即可</p>
+<h5 id="配置java变量"><a href="#配置java变量" class="headerlink" title="配置java变量"></a>配置java变量</h5><h6 id="下载jdk1-8"><a href="#下载jdk1-8" class="headerlink" title="下载jdk1.8"></a>下载jdk1.8</h6><p>这里我已经上传到我的百度网盘，直接下载下来就好了</p>
+<pre><code>链接：https://pan.baidu.com/s/1A1W7Ty91_cDA2YRoluV_bg?pwd=qb9q 
+提取码：qb9q
 </code></pre>
-<p>使用淘宝镜像 cnpm</p>
-<pre><code class="powershell">npm install cnpm -g
-
-npm install cnpm -g --registry=https://registry.npm.taobao.org
+<p>我们直接进入宝塔面板的文件根目录，然后找到以下地址</p>
+<pre><code>/usr/java
 </code></pre>
-<p>解决了</p>
-]]></content>
+<p>如果没有java文件夹请新建一个即可，然后将下载好的jdk文件使用宝塔自带的方法进行解压</p>
+<p>解压好我的jdk文件夹的地址是这样</p>
+<pre><code>/usr/java/jdk1.8.0_181
+</code></pre>
+<h6 id="配置java环境变量"><a href="#配置java环境变量" class="headerlink" title="配置java环境变量"></a>配置java环境变量</h6><p>直接切换到该目录下</p>
+<pre><code>/home/lighthouse
+</code></pre>
+<p>如果没有请新建，然后找到.bashrc文件，然后打开编辑，在文件的最后一行加入以下代码</p>
+<pre><code>export JAVA_HOME=/usr/java/jdk1.8.0_181
+       export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+       export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
+</code></pre>
+<p>这里我们需要刷新一下系统的java环境变量，我们链接好ssh到服务器</p>
+<pre><code>source /home/lighthouse/.bashrc
+</code></pre>
+<p>然后再输入环境是否安装成功</p>
+<pre><code>java -version
+</code></pre>
+<p>输入以上代码即可，然后就可以按照官方的安装文档配置了</p>
+<p>记住这里如果系统返回nofound是指你的环境还没安装好，重新检查一下是那步有问题，再检查一下就好了！</p>
+<p>官方的配置文档</p>
+<pre><code>http://doc.wwery.com/#/internalversion
+</code></pre>
+<h5 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h5>]]></content>
+      <categories>
+        <category>部署hellohao图床</category>
+      </categories>
+      <tags>
+        <tag>hellohao图床</tag>
+      </tags>
   </entry>
 </search>
